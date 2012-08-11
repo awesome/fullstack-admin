@@ -1,0 +1,36 @@
+#ajax-loading {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: white;
+  overflow: hidden;
+  background: #EEE;
+  background: -moz-linear-gradient(top, white 0%, #CCC 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,white), color-stop(100%,#CCC));
+  background: -webkit-linear-gradient(top, white 0%,#CCC 100%);
+  background: -o-linear-gradient(top, white 0%,#CCC 100%);
+  background: -ms-linear-gradient(top, white 0%,#CCC 100%);
+  background: linear-gradient(top, white 0%,#CCC 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 );
+  border-radius: 0 0 0 10px;
+  -moz-border-radius: 0 0 0 10px;
+  -webkit-border-radius: 0 0 0 10px;
+  box-shadow: 1px -1px 2px #fff inset;
+  -moz-box-shadow: 1px -1px 2px #fff inset;
+  -webkit-box-shadow: 1px -1px 2px #fff inset;
+  z-index: 9999;
+  border: 1px solid #aaa;
+  border-right: 0;
+  border-top: 0;
+
+}
+
+#ajax-loading div {
+  line-height: 14px;
+  font-weight: bold;
+  font-size: 14px;
+  background: transparent url(/assets/loading.gif) no-repeat 13px center;
+  padding: 13px 20px 13px 42px;
+  height: 12px;
+
+}

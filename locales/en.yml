@@ -1,0 +1,9 @@
+en:
+  fullstack:
+    admin:
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"
+      are_you_sure: "Are you sure?"
+      form:
+        correct_these_errors_and_retry: "Correct these errors and retry"

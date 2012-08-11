@@ -1,0 +1,11 @@
+/*
+*= require jquery.facebox
+*/
+
+#facebox .image {
+  padding: 5px;
+}
+
+#facebox .content {
+  padding: 0;
+}

@@ -1,0 +1,3 @@
+class BooleanInput < CheckboxInput
+  
+end

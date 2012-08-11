@@ -1,0 +1,2 @@
+class TagListInput < TagsInput
+end

@@ -1,0 +1,44 @@
+/*
+*= require jquery-ui
+*= require jquery.noty
+*/
+
+.mb05 {
+  margin-bottom: 9px;
+}
+
+.mb1 {
+  margin-bottom: 18px;
+}
+.mb2 {
+  margin-bottom: 36px;
+}
+.mb3 {
+  margin-bottom: 54px;
+}
+
+.w1{width:6.382978723% !important;}
+.w2{width:14.89361702% !important;}
+.w3{width:23.404255317% !important;}
+.w4{width:31.914893614% !important;}
+.w5{width:40.425531911% !important;}
+.w6{width:48.93617020799999% !important;}
+.w7{width:57.446808505% !important;}
+.w8{width:65.95744680199999%!important;}
+.w9{width:74.468085099% !important;}
+.w10{width:82.97872339599999% !important;}
+.w11{width:91.489361693% !important;}
+.w12{width:99.99999998999999% !important;}
+
+.float.right, .fr {
+  float:right !important;
+}
+
+.float.left, .fl {
+  float:left !important;
+}
+
+.sortable .handle {
+  cursor: move;
+}
+

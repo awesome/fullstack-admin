@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     "Gemfile",
+    "Gemfile.lock",
     "README.md",
     "Rakefile",
     "VERSION",
@@ -974,6 +975,7 @@ Gem::Specification.new do |s|
     "app/models/roleable.rb",
     "app/models/suspendable.rb",
     "app/models/trackable.rb",
+    "fullstack-admin.gemspec",
     "lib/fullstack-admin.rb",
     "lib/fullstack-admin/engine.rb",
     "lib/generators/fullstack/admin/install_generator.rb",

@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem 'rails'
+gem 'rails', "~> 3.2"
 gem "bootstrap-wysihtml5-rails"
 gem "bootstrap_helpers"
 gem "chosen-rails"
@@ -13,7 +13,6 @@ gem "meta_search"
 gem "plupload-rails"
 gem "fullstack"
 
-group :development do  
-  gem "bundler"
-  gem "jeweler", "~> 1.8.4"
+group :development do
+  gem "jeweler"
 end

@@ -2,7 +2,7 @@ source "http://rubygems.org"
 
 gem 'rails', "~> 3.2"
 gem "bootstrap-wysihtml5-rails"
-gem "bootstrap_helpers"
+gem "bootstrap-helpers"
 gem "chosen-rails"
 gem "ckeditor" 
 gem "facebox-rails" 

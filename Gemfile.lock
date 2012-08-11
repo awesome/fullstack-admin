@@ -34,9 +34,10 @@ GEM
     auto_strip_attributes (2.0.2)
       activerecord (>= 3.0)
     bcrypt-ruby (3.0.1)
+    bootstrap-helpers (0.1.1)
+      rails
     bootstrap-wysihtml5-rails (0.3.0)
       railties (>= 3.0)
-    bootstrap_helpers (0.0.9)
     builder (3.0.0)
     checkin (0.5.0)
     chosen-rails (0.9.8.1)
@@ -214,8 +215,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-helpers
   bootstrap-wysihtml5-rails
-  bootstrap_helpers
   chosen-rails
   ckeditor
   facebox-rails

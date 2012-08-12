@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.5"
+  s.version = "0.1.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
@@ -1024,7 +1024,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<chosen-rails>, [">= 0"])
       s.add_runtime_dependency(%q<ckeditor>, [">= 0"])
       s.add_runtime_dependency(%q<facebox-rails>, [">= 0"])
-      s.add_runtime_dependency(%q<formtastic>, [">= 0"])
+      s.add_runtime_dependency(%q<formtastic>, ["~> 2.1.1"])
       s.add_runtime_dependency(%q<formtastic-bootstrap>, [">= 0"])
       s.add_runtime_dependency(%q<less-rails-bootstrap>, [">= 0"])
       s.add_runtime_dependency(%q<meta_search>, [">= 0"])
@@ -1038,7 +1038,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<chosen-rails>, [">= 0"])
       s.add_dependency(%q<ckeditor>, [">= 0"])
       s.add_dependency(%q<facebox-rails>, [">= 0"])
-      s.add_dependency(%q<formtastic>, [">= 0"])
+      s.add_dependency(%q<formtastic>, ["~> 2.1.1"])
       s.add_dependency(%q<formtastic-bootstrap>, [">= 0"])
       s.add_dependency(%q<less-rails-bootstrap>, [">= 0"])
       s.add_dependency(%q<meta_search>, [">= 0"])
@@ -1053,7 +1053,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<chosen-rails>, [">= 0"])
     s.add_dependency(%q<ckeditor>, [">= 0"])
     s.add_dependency(%q<facebox-rails>, [">= 0"])
-    s.add_dependency(%q<formtastic>, [">= 0"])
+    s.add_dependency(%q<formtastic>, ["~> 2.1.1"])
     s.add_dependency(%q<formtastic-bootstrap>, [">= 0"])
     s.add_dependency(%q<less-rails-bootstrap>, [">= 0"])
     s.add_dependency(%q<meta_search>, [">= 0"])

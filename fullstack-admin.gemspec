@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
-  s.date = "2012-08-11"
+  s.date = "2012-08-12"
   s.description = "Administration interface framework for fullstack"
   s.email = "maurizio.cas@gmail.com"
   s.extra_rdoc_files = [
@@ -977,7 +977,6 @@ Gem::Specification.new do |s|
     "app/models/trackable.rb",
     "fullstack-admin.gemspec",
     "lib/fullstack-admin.rb",
-    "lib/fullstack-admin/engine.rb",
     "lib/generators/fullstack/admin/install_generator.rb",
     "lib/generators/fullstack/admin/templates/root/app/assets/javascripts/admin/admin.js.coffee",
     "lib/generators/fullstack/admin/templates/root/app/assets/stylesheets/admin/admin.css",

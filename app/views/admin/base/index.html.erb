@@ -1,0 +1,62 @@
+<% if content_for? :title -%>
+  <div class="page-header"><h1><%= yield :title %></h1></div>
+<% else -%>
+  <div class="page-header"><h1><%= t(plural_name, :scope => "active_record.plurals") %></h1></div>
+<% end -%>
+
+<% if partial?('collection') %>
+  <%= render :partial => "collection", :locals => {:collection => instance_variable_get("@#{controller_name}"), :"#{controller_name}" => instance_variable_get("@#{controller_name}")} %>
+<% else %>
+
+
+
+<div class="mb1">
+	<% if subject.can_create?(controller_name) && controller.action_methods.include?("new") %>
+	  <%= link_to send("new_admin_#{controller_name.singularize}_path"), :class => "btn btn-primary" do %>
+	  <i class="icon icon-plus icon-white"></i> <%= _("New") %>
+	  <% end -%>
+	<% end %>
+	
+	  <%= link_to 'javascript:void(0)', :class => "btn toggle-delete" do  %>
+    <i class="icon icon-trash"></i> <%= _("Delete") %>
+	  <% end -%>
+
+</div>
+
+
+<table class="table table-bordered table-striped index-table">
+  <thead>
+  <tr>
+      <%= render :partial => 'index', :locals => {:thead => true, :tbody => false, :content =>  nil} %>
+  </tr>
+  </thead>
+  <tbody>
+    <% instance_variable_get("@#{controller_name}").each do |item| -%>
+      <tr>
+     <%= render :partial => 'index', :locals => {:thead => false, :tbody => true, :content =>  item} %>
+      </tr>
+    <% end -%>
+  </tbody>
+  <%=  paginate instance_variable_get("@#{controller_name}"), :window => 4, :outer_window => 3 %>
+
+</table>
+
+<% end %>
+
+<% content_for :aside do -%>
+
+<% if partial?('filter') %>
+  	<div class="well">
+      <div class="mb1">
+        <h4>Filtra</h4>
+      </div>
+  		<%= admin_form_for @search, :url => self.send("admin_#{collection_name}_path") , :html => {:method => :get} do |f| %>
+        <%= render :partial => "filter", :locals => {:f => f} %>
+        <%= f.buttons do %>
+        <%= f.commit_button _("Filter") %>
+        <% end %>
+  		<% end %>
+  	</div>
+  <% end %>
+<% end -%>
+

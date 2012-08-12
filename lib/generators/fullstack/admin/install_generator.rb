@@ -29,7 +29,23 @@ eos
           
         end
       end
-    
+      
+      def append_routes
+        route do
+<<-eos
+  namespace :admin do
+    root :to => "dashboard#show"
+  end
+  
+eos
+        
+        end
+      end
+      
+      def english_localizations
+        generate "fullstack:admin:locale en"
+      end
+
       protected
       
 

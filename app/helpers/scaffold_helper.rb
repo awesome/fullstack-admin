@@ -25,5 +25,9 @@ module ScaffoldHelper
       method = "#{method}"
       super(@search, method, I18n.t(method, :scope => 'fullstack.admin.form.labels', :default => method.humanize))
     end
+    
+    def app_name
+      Rails.application.class.to_s.split("::").first.underscore.humanize
+    end
 
 end

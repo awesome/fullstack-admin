@@ -5,5 +5,19 @@ en:
       edit: "Edit"
       delete: "Delete"
       are_you_sure: "Are you sure?"
+      
       form:
         correct_these_errors_and_retry: "Correct these errors and retry"
+      
+      flash:
+        success:
+          generic: "Changes saved successfully"
+          update: "Document updated successfully"
+          delete: "Document deleted successfully"
+
+        error:
+          generic: "Changes not saved due to an error"
+          update: "Document not updated due to an error"
+          delete: "Document not deleted due to an error"
+
+      

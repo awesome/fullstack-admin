@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.10"
+  s.version = "0.1.11"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
@@ -985,7 +985,6 @@ Gem::Specification.new do |s|
     "lib/generators/fullstack/admin/templates/root/app/models/user.rb",
     "lib/generators/fullstack/admin/templates/root/lib/support/user_subject.rb",
     "locales/en.yml",
-    "locales/it.yml",
     "vendor/assets/javascripts/ajax-chosen.js",
     "vendor/assets/javascripts/angular.js",
     "vendor/assets/javascripts/bootstrap.js",

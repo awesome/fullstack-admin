@@ -14,18 +14,10 @@ class Admin::Responder < ActionController::Responder
      l = options[:location] || default_location
    end
    
-   
-   # If it's not a get request and the object has no errors, set the flash message
-   # according to the current action. If the controller is users/pictures, the
-   # flash message lookup for create is:
-   #
-   #   flash.users.pictures.create
-   #   flash.actions.create
-   #
    def to_html
      unless get?
-       default_success_message = delete? ? I18n.t("flash.success.delete") : I18n.t("flash.success.update")
-       default_error_message   = delete? ? I18n.t("flash.error.delete")   : I18n.t("flash.error.update")
+       default_success_message = delete? ? I18n.t("fullstack.admin.flash.success.delete") : I18n.t("fullstack.admin.flash.success.update")
+       default_error_message   = delete? ? I18n.t("fullstack.admin.flash.error.delete")   : I18n.t("fullstack.admin.flash.error.update")
        
        if has_errors?
          controller.flash[:error] = options.delete(:error)  || default_error_message 

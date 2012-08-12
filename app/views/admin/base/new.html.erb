@@ -1,0 +1,8 @@
+<% if content_for? :title -%>
+  <div class="page-header"><h1><%= yield :title %></h1></div>
+<% else -%>
+  <div class="page-header"><h1><%= _("New") %> <%= t(singular_name, :scope => "active_record.models") %></h1></div>
+<% end -%>
+
+<%= render :partial => 'form' %>
+

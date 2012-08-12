@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <%= csrf_meta_tags %>
+  <title><%= ( @title ? "#{@title} - " : "" ) + "#{app_name} Admin" %></title>
+
+  <%= stylesheet_link_tag 'admin/admin' %>
+  <%= yield :stylesheets %>
+</head>
+
+<body>
+  <%= render :partial => 'admin/shared/nav' %>
+
+  <%= navbar :fixed => :top do %>
+    <%= brand "#{app_name} Admin", admin_root_path %>
+    <%= yield :menu %>
+  <% end %>
+
+  <%= yield :crumbs %>
+  
+  <%= container :fluid, :class => "main" do %>
+    <%= row do %>
+      
+      <%= span(2, :id => "left-aside") do %>
+          <%= yield :nav %>
+      <% end %>
+      
+      <%= span(content_for?(:aside) ? 6 : 10, :id => "center") do %>
+          <%= yield %>
+      <% end %>
+      
+      <% if content_for?(:aside) %>
+        <%= span(4, :id => "left-aside") do %>
+            <%= yield :nav %>
+        <% end %>
+      <% end %>
+    
+    <% end %>
+  <% end %>
+
+  <%= javascript_include_tag 'admin/admin' %>
+  <%= yield :javascripts %>
+
+  <% [:notice, :error, :alert].each do |sym| %>
+
+      <% if flash[sym].present? %>
+        <%= javascript_tag do %>
+        $.notify.notice('<%= j "#{flash[sym]}" %>');
+        <% end %>
+
+        <% flash.discard(sym) %>
+      <% end %>
+  
+  <% end %>
+  
+</body>
+</html>
+

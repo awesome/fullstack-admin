@@ -21,7 +21,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 require "bootstrap-wysihtml5-rails"
-require "bootstrap_helpers"
+require "bootstrap-helpers"
 require "chosen-rails"
 require "ckeditor" 
 require "facebox-rails" 

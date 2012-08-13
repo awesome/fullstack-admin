@@ -5,7 +5,5 @@
 #= require support/uploads
 #= require support/plupload
 #= require support/facebox
-#= require admin/links
-#= require ckeditor/init
 
 # require support/gmap

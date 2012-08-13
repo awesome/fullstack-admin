@@ -45,10 +45,11 @@ module Fullstack
       # end
       
       def append_to_menu
-        gsub_file(Rails.root.join('app', 'views', scope, "shared", "_nav.html.erb"), /\<\!-- items placeholder --\>\n/) do
+        placeholder_text = "FULLSTACK_PLACEHOLDER"
+        gsub_file(Rails.root.join('app', 'views', scope, "shared", "_nav.html.erb"), /\<\!-- #{placeholder_text} --\>\n/) do
 <<-str
       <%= nav_item _("#{controller_class_name}"), #{scope}_#{plural_name}_path %>
-      <!-- items placeholder -->
+      <!-- #{placeholder_text} -->
           
 str
         end

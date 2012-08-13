@@ -7,10 +7,12 @@
 #= require support/pickers
 #= require chosen-jquery
 #= require ajax-chosen
-#= require jquery.form
 #= require jquery.remotipart
 #= require jquery.validate
 #= require ckeditor/init
+
+## require jquery.form
+
 
 $(document).ready ->
 

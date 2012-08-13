@@ -1,0 +1,30 @@
+<% content_for :menu do -%>
+  
+  <%= nav do %>
+  <%= nav_item t('fullstack.admin.dashboard', :default => "Dashboard"), admin_root_path, :icon => "cog" , :icon_color => :white %>
+  <% end %>
+  
+  <%= nav(:class => 'float right') do %>
+  <%= nav_item t('fullstack.admin.homepage', :default => "Homepage"), "/", :icon => "home" , :icon_color => :white %>
+    <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :icon => "user" , :icon_color => :white do %>
+        <%= nav_item t('fullstack.admin.logout', :default => "Logout"), destroy_user_session_path, :method => :delete %>
+    <% end %>
+  <% end %>
+  
+<% end -%>
+
+<% content_for :nav do -%>
+  
+  <div class="well">
+    <%= nav_list do %>
+      <!-- FULLSTACK_PLACEHOLDER -->
+    
+      <!-- Please do not delete the comment above. 
+           It is used by fullstack generators
+           to attach new items to this menu.
+        -->
+    <% end %>
+  </div>
+
+
+<% end -%>

@@ -15,7 +15,7 @@ module Fullstack
           generate "fullstack:install  --host='#{host}' --user='#{user}'  --title='#{title}' --slogan='#{slogan}'"
         end
       end
-        
+
       def copy_templates
         directory "root", Rails.root
       end
@@ -31,15 +31,16 @@ eos
       end
       
       def append_routes
-        route do
-<<-eos
+        src = <<-eos
+
   namespace :admin do
     root :to => "dashboard#show"
   end
   
 eos
+        route(src)
         
-        end
+        route("\n  devise_for :users\n")
       end
       
       def english_localizations

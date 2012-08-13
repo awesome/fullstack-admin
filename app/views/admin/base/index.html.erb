@@ -1,26 +1,28 @@
 <% if content_for? :title -%>
   <div class="page-header"><h1><%= yield :title %></h1></div>
 <% else -%>
-  <div class="page-header"><h1><%= t(plural_name, :scope => "active_record.plurals") %></h1></div>
+  <div class="page-header"><h1><%= t(plural_name, :scope => "activerecord.models") %></h1></div>
 <% end -%>
 
 <% if partial?('collection') %>
-  <%= render :partial => "collection", :locals => {:collection => instance_variable_get("@#{controller_name}"), :"#{controller_name}" => instance_variable_get("@#{controller_name}")} %>
+  <%= render :partial => "collection", 
+  :locals => { 
+    :collection => instance_variable_get("@#{controller_name}"),
+    :"#{controller_name}" => instance_variable_get("@#{controller_name}")
+  } 
+  %>
 <% else %>
-
-
 
 <div class="mb1">
 	<% if subject.can_create?(controller_name) && controller.action_methods.include?("new") %>
-	  <%= link_to send("new_admin_#{controller_name.singularize}_path"), :class => "btn btn-primary" do %>
-	  <i class="icon icon-plus icon-white"></i> <%= _("New") %>
-	  <% end -%>
+    <%= button t('fullstack.admin.new', :default => "New"), 
+               send("new_admin_#{controller_name.singularize}_path"),
+               :type => :primary, :icon => :plus, :icon_color => :white %>
 	<% end %>
-	
-	  <%= link_to 'javascript:void(0)', :class => "btn toggle-delete" do  %>
-    <i class="icon icon-trash"></i> <%= _("Delete") %>
-	  <% end -%>
 
+  <%= button t('fullstack.admin.delete', :default => "Delete"), 
+             'javascript:void(0)', :class => "toggle-delete",
+             :icon => :trash %>
 </div>
 
 
@@ -31,14 +33,13 @@
   </tr>
   </thead>
   <tbody>
-    <% instance_variable_get("@#{controller_name}").each do |item| -%>
+    <% current_collection.each do |item| -%>
       <tr>
-     <%= render :partial => 'index', :locals => {:thead => false, :tbody => true, :content =>  item} %>
+        <%= render :partial => 'index', :locals => {:thead => false, :tbody => true, :content =>  item} %>
       </tr>
     <% end -%>
   </tbody>
-  <%=  paginate instance_variable_get("@#{controller_name}"), :window => 4, :outer_window => 3 %>
-
+  <%=  paginate current_collection, :window => 4, :outer_window => 3 %>
 </table>
 
 <% end %>
@@ -48,12 +49,12 @@
 <% if partial?('filter') %>
   	<div class="well">
       <div class="mb1">
-        <h4>Filtra</h4>
+        <h4><%= t('fullstack.admin.filter', :default => "Filter") %></h4>
       </div>
   		<%= admin_form_for @search, :url => self.send("admin_#{collection_name}_path") , :html => {:method => :get} do |f| %>
         <%= render :partial => "filter", :locals => {:f => f} %>
         <%= f.buttons do %>
-        <%= f.commit_button _("Filter") %>
+        <%= f.commit_button t('fullstack.admin.filter', :default => "Filter") %>
         <% end %>
   		<% end %>
   	</div>

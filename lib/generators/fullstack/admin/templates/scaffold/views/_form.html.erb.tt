@@ -1,0 +1,16 @@
+<%%= admin_form_for [:"<%= scope %>", current_resource], :html => {:multipart => true} do |f| -%>
+
+  <%%= f.errors %>
+  
+  <%%= f.inputs do %>
+
+  <%% end -%> 
+
+  <%%= form_actions do %>
+  <%%= button (current_resource.persisted? ? t('fullstack.admin.update', :default => "Update") : t('fullstack.admin.create', :default => "Create")),
+    :type => :primary, 
+    :size => :large %>
+  <%% end %>
+  
+
+<%% end -%>

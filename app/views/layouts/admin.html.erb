@@ -11,14 +11,14 @@
 <body>
   <%= render :partial => 'admin/shared/nav' %>
 
-  <%= navbar :fixed => :top do %>
+  <%= navbar :fluid => true, :fixed => :top do %>
     <%= brand "#{app_name} Admin", admin_root_path %>
     <%= yield :menu %>
   <% end %>
 
   <%= yield :crumbs %>
   
-  <%= container :fluid, :class => "main" do %>
+  <%= container :fluid => true, :class => "main" do %>
     <%= row do %>
       
       <%= span(2, :id => "left-aside") do %>
@@ -31,7 +31,7 @@
       
       <% if content_for?(:aside) %>
         <%= span(4, :id => "left-aside") do %>
-            <%= yield :nav %>
+            <%= yield :aside %>
         <% end %>
       <% end %>
     

@@ -1,0 +1,18 @@
+<%% if thead -%>
+    <th><%%= sort_link title_method_for(current_collection.klass) %></th>
+    <% if has_timestamps? %>
+      <th><%%= sort_link :created_at %></th>
+    <% end %>
+    
+    <th><%%= t('fullstack.admin.actions', :default => "Actions") %></th>
+<%% end -%>
+
+<%% if tbody -%>
+    <td><%%= link_to title_for(content), [:edit,  :<%= scope %>, content]  %></td>
+    
+    <% if has_timestamps? %>
+    <td><%%= l content.created_at.to_date, :format => :long %></td>
+    <% end %>
+    
+    <td><%%= default_collection_actions_for(content) %></td>
+<%% end -%>

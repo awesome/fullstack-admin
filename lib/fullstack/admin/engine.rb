@@ -1,5 +1,6 @@
 require 'rails'
 require "ckeditor"
+require 'fullstack'
 
 module Fullstack
   module Admin
@@ -14,8 +15,12 @@ module Fullstack
             require "ckeditor/orm/active_record"
           end
 
-          Ckeditor::ApplicationController.class_eval do
-            authorize(:scope => :admin)
+          if Object.const_defined?("UserSubject")
+
+            Ckeditor::ApplicationController.class_eval do
+              authorize(:scope => :admin)
+            end
+
           end
         end
                 

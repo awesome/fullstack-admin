@@ -1,10 +1,20 @@
 it:
   fullstack:
     admin:
+      homepage: "Homepage"
+      account: "Account"
+      dashboard: "Dashboard"
+      logout: "Logout"
+      new: "Crea"
       show: "Visualizza"
       edit: "Modifica"
       delete: "Elimina"
+      filter: "Filtra"
+      create: "Crea"
+      actions: "Azioni"
+      
       are_you_sure: "Sei sicuro?"
+      
       form:
         correct_these_errors_and_retry: "Correggi questi errori e riprova"
       

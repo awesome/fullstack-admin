@@ -48,7 +48,7 @@ module Fullstack
         placeholder_text = "FULLSTACK_PLACEHOLDER"
         gsub_file(Rails.root.join('app', 'views', scope, "shared", "_nav.html.erb"), /\<\!-- #{placeholder_text} --\>\n/) do
 <<-str
-      <%= nav_item _("#{controller_class_name}"), #{scope}_#{plural_name}_path %>
+      <%= nav_item t('active_record.models.#{plural_name}', :default => "#{controller_class_name}"), #{scope}_#{plural_name}_path %>
       <!-- #{placeholder_text} -->
           
 str
@@ -56,6 +56,10 @@ str
       end
       
       protected
+      
+      def class_name
+        name.singularize.camelize
+      end
       
       def scope
         @scope ||= "admin"

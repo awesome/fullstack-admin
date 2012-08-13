@@ -30,18 +30,6 @@ eos
         end
       end
       
-      def append_routes
-        src = <<-eos
-
-  namespace :admin do
-    root :to => "dashboard#show"
-  end
-  
-eos
-        route(src)
-        
-        route("\n  devise_for :users\n")
-      end
 
       def users
         generate "migration:from user"
@@ -66,6 +54,20 @@ eos
       
       def english_localizations
         generate "fullstack:admin:locale en"
+      end
+
+
+      def append_routes
+        src = <<-eos
+
+  namespace :admin do
+    root :to => "dashboard#show"
+  end
+  
+eos
+        route(src)
+        
+        route("\n  devise_for :users\n")
       end
 
       protected

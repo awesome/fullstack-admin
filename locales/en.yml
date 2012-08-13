@@ -1,9 +1,17 @@
 en:
   fullstack:
     admin:
+      homepage: "Homepage"
+      account: "Account"
+      dashboard: "Dashboard"
+      logout: "Logout"
+      new: "New"
       show: "Show"
       edit: "Edit"
       delete: "Delete"
+      create: "Create"
+      filter: "Filter"
+      actions: "Actions"
       are_you_sure: "Are you sure?"
       
       form:

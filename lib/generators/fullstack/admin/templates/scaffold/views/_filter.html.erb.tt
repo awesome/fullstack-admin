@@ -1,0 +1,14 @@
+<!-- https://github.com/ernie/meta_search -->
+<!-- 
+ f.input :title_contains
+ f.input :created_at, :as => :daterange
+-->
+
+<% if title_column %>
+<%%=  f.input :<%= title_column %>_contains %>
+<% end %>
+
+<% if has_timestamps? %>
+  <%%=  f.input :created_at, :as => :daterange %>
+<% end %>
+

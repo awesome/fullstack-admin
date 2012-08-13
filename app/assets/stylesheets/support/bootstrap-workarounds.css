@@ -33,3 +33,7 @@
 .tab-content {
 overflow: visible;
 }
+
+.tabs-left .nav-list.nav-tabs {
+  padding-right: 0;
+}

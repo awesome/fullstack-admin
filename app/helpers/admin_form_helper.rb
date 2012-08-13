@@ -5,10 +5,6 @@ module AdminFormHelper
        @target = decorated
     end
     
-    def errors(*args)
-      @target.template.form_errors(@target, *args)
-    end
-    
     def method_missing(method, *args, &block)
       @target.send(method, *args, &block)
     end
@@ -22,42 +18,32 @@ module AdminFormHelper
     end
     
     def form_errors(options = {:exclude => [:slug]})
-      f = this
+      f = @target
       unless f.object.errors.empty?
-        content_tag :div, :class => "alert alert-block" do
-          link_to "&times;", :class => "close", :data => {:dismiss => "alert"}
-          content_tag(:h4, t('fullstack.admin.form.correct_these_errors_and_retry', :default => "Correct these errors and retry"), :class => "alert-heading")
+        @target.template.content_tag :div, :class => "alert alert-block" do
+          @target.template.link_to "&times;", :class => "close", :data => {:dismiss => "alert"}
+          @target.template.content_tag(:h4, I18n.t('fullstack.admin.form.correct_these_errors_and_retry', :default => "Correct these errors and retry"), :class => "alert-heading")
           f.semantic_errors *(f.object.errors.keys - (options[:exclude] || []))
         end
       end
     end
+    alias :errors :form_errors
     
     def action(method, options = {})
       default_label = I18n.t("fullstack.admin_form.labels.#{method}", :default => "#{method}".humanize)
       options[:type] ||= !!options[:primary] ? :primary : nil
       @target.template.button((options.delete(:label) || default_label), options)
     end
-
-  end
-  
-  def after_current_form(key = :default, options = {:replace => false})
-    reset_after_current_form_hash! if @after_current_form.nil?
-    if options[:replace]
-      @after_current_form[key] = ""
-    end
     
-    @after_current_form[key]
   end
-  
-  def reset_after_current_form_hash!
-    @after_current_form = ActiveSupport::OrderedHash.new
-    @after_current_form[:default] = ""
-  end
-  
+   
   def admin_form_for(record_or_name_or_array, *args)
-     semantic_form_for(record_or_name_or_array, *args) do |f|
-       yield(FormBuilderDecorator.new(f)) << @after_current_form.map { |k, v| v }.join().html_safe
-     end
+    options = args.extract_options!
+    options[:builder] ||= FormtasticBootstrap::FormBuilder
+    
+    semantic_form_for(record_or_name_or_array, *(args << options)) do |f|
+      yield(FormBuilderDecorator.new(f))
+    end
   end
   
 end

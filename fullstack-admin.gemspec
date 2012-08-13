@@ -995,6 +995,7 @@ Gem::Specification.new do |s|
     "lib/generators/fullstack/admin/templates/root/app/controllers/admin/dashboard_controller.rb",
     "lib/generators/fullstack/admin/templates/root/app/models/user.rb",
     "lib/generators/fullstack/admin/templates/root/app/views/admin/dashboard/show.html.erb",
+    "lib/generators/fullstack/admin/templates/root/app/views/admin/shared/_nav.html.erb",
     "lib/generators/fullstack/admin/templates/root/db/migrate/%migration_timestamp%_create_ckeditor_assets.rb",
     "lib/generators/fullstack/admin/templates/root/lib/support/user_subject.rb",
     "locales/en.yml",

@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.16"
+  s.version = "0.1.17"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
@@ -981,7 +981,6 @@ Gem::Specification.new do |s|
     "app/views/admin/base/new.html.erb",
     "app/views/admin/base/update.js.coffee",
     "app/views/layouts/admin.html.erb",
-    "config/initializers/ckeditor.rb",
     "config/routes.rb",
     "fullstack-admin.gemspec",
     "lib/fullstack-admin.rb",

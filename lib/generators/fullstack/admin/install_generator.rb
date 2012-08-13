@@ -42,6 +42,27 @@ eos
         
         route("\n  devise_for :users\n")
       end
+
+      def users
+        generate "migration:from user"
+        append_to_file "db/seeds.rb" do
+<<-eos
+
+if Rails.env.development?
+  user = User.new( :email => "admin@example.com",
+                    :password => "password" )
+                  
+  user.skip_confirmation! if user.respond_to?(:skip_confirmation!)             
+  user.save!
+  user.confirm! if user.respond_to?(:confirm)
+  user.has_role!(:administrator) if user.respond_to?(:has_role!)
+end
+  
+eos
+          
+        end
+      
+      end
       
       def english_localizations
         generate "fullstack:admin:locale en"
@@ -49,6 +70,9 @@ eos
 
       protected
       
+      def migration_timestamp
+        Time.now.strftime("%Y%m%d%H%M%S")
+      end
 
       def host
         options[:host]

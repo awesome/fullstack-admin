@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.12"
+  s.version = "0.1.13"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
@@ -996,7 +996,6 @@ Gem::Specification.new do |s|
     "lib/generators/fullstack/admin/templates/root/app/models/user.rb",
     "lib/generators/fullstack/admin/templates/root/app/views/admin/_nav.html.erb",
     "lib/generators/fullstack/admin/templates/root/app/views/admin/dashboard/show.html.erb",
-    "lib/generators/fullstack/admin/templates/root/db/migrate/20120730204729_create_ckeditor_assets.rb",
     "lib/generators/fullstack/admin/templates/root/lib/support/user_subject.rb",
     "locales/en.yml",
     "locales/it.yml",

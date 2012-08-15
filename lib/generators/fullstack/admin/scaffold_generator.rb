@@ -37,12 +37,11 @@ module Fullstack
       def create_views
         if options[:views]
           directory('views', Rails.root.join('app', 'views', scope, plural_name))
+          if has_timestamps? || title_column
+            template "_filter.html.erb", Rails.root.join('app', 'views', scope, plural_name, "_filter.html.erb")
+          end
         end
       end
-
-      # def generate_inputs
-      #   generate("inputs #{name.singularize} --scope #{scope}")
-      # end
       
       def append_to_menu
         placeholder_text = "FULLSTACK_PLACEHOLDER"
@@ -87,7 +86,7 @@ str
       end
       
       def title_column
-        ( model.column_names & %W(title name label claim) ).first
+        ( model.column_names & %W(title name label browser_title seo_title seo_name key claim email) ).first
       end
       
       def controller_class_name

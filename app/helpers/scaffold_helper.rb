@@ -29,5 +29,22 @@ module ScaffoldHelper
     def app_name
       Rails.application.class.to_s.split("::").first.underscore.humanize
     end
-
+    
+    def has_timestamps?(model)
+      model.columns_hash["created_at"]
+    end
+      
+    def title_column(model)
+      ( model.column_names & %W(title name label browser_title seo_title seo_name key claim email) ).first
+    end
+    
+    
+    def skip_filter!
+      @skip_filter = true
+    end
+    
+    def skip_filter
+      @skip_filter
+    end
+    
 end

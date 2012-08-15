@@ -1,8 +1,16 @@
-<% if content_for? :title -%>
-  <div class="page-header"><h1><%= yield :title %></h1></div>
-<% else -%>
-  <div class="page-header"><h1><%= t('fullstack.admin.edit', :default => "Edit") %> `<%= title_for(current_resource) %>`</h1></div>
-<% end -%>
+<div class="page-header">
+  <h1>
+  <% if content_for? :title -%>
+    <%= yield :title %>
+  <% else -%>
+    <%= t('fullstack.admin.edit', :default => "Edit") %> `<%= title_for(current_resource) %>`
+  <% end -%>
+  </h1>
+  <div>
+    <i><%= current_resource.respond_to?(:updated_at) ? l(current_resource.updated_at, :format => :long) : "" %></i>
+  </div>
+</div>
+
 
 <%= render :partial => 'form' %>
 

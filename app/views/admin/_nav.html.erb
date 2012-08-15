@@ -17,12 +17,16 @@
 
   <div class="tabbable tabs-left float right">
     <%= nav_list :class => "nav-tabs" do %>
-      <!-- FULLSTACK_PLACEHOLDER -->
-    
-      <!-- Please do not delete the comment above. 
-           It is used by fullstack generators
-           to attach new items to this menu.
-        -->
+
+    <% Fullstack::Admin.resources.each do |rog| %>
+        <% if rog.type == :group %> 
+          <%= nav_header rog.name %>
+          
+        <% elsif rog.type == :resource %>
+          <%= nav_item rog.name, [:admin, rog.name] %>
+        <% end %>
+    <% end %>
+
     <% end %>
   </div>
 

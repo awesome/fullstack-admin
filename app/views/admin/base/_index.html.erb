@@ -1,5 +1,7 @@
+<% title_column_or_id = title_column(current_resource_class) || "id" %>
+
 <% if thead -%>
-    <th><%= sort_link title_column(current_resource_class) %></th>
+    <th><%= sort_link title_column_or_id %></th>
 
 <% if has_timestamps?(current_resource_class) %>
     <th><%= sort_link :created_at %></th>
@@ -9,7 +11,7 @@
 <% end -%>
 
 <% if tbody -%>
-    <td><%= link_to (content.send(title_column(current_resource_class))), [:edit,  :admin, content]  %></td>
+    <td><%= link_to (content.send(title_column_or_id)), [:edit,  :admin, content]  %></td>
 
 <% if has_timestamps?(current_resource_class) %>
     <td><%= l content.created_at.to_date, :format => :long %></td>

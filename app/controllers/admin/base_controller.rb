@@ -20,5 +20,37 @@ class Admin::BaseController < ApplicationController
     end
   end
   
+  helper_method :singular_name,
+                :plural_name,
+                :resource_name,
+                :collection_name,
+                :current_resource_class,
+                :current_resource, 
+                :current_collection
+
+
+  def current_resource_class
+    @current_resource_class ||= controller_name.singularize.camelize.constantize
+  end
+  
+  def resource_name
+    current_resource_class.name.demodulize.underscore
+  end
+  
+  def collection_name
+    resource_name.pluralize
+  end
+
+  alias :singular_name :resource_name
+  alias :plural_name :collection_name
+  
+
+  def current_resource
+    instance_variable_get("@#{resource_name}")
+  end
+
+  def current_collection
+    instance_variable_get("@#{collection_name}")
+  end
   
 end

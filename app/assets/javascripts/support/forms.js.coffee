@@ -17,11 +17,26 @@
 $(document).ready ->
 
   $("input[data-limit],textarea[data-limit]").limit()
-  $("select:not([data-remote])").chosen()
+  $("select:not([data-remote]):not(.datetime-selector)").chosen()
 
   $("select[data-remote]").each ->
     $(this).ajaxChosen {method: "GET", url:$(this).data('remote'), dataType: 'json'}, (data) ->
       data
+
+  # $("select:not([data-remote]):not(.datetime-selector)").select2()
+  # 
+  # $("select[data-remote]").each ->    
+  #   $(@).select2
+  #     placeholder: $(@).data('placeholder')
+  #     minimumInputLength: 3
+  #     ajax:
+  #       url: $(@).data('remote')
+  #       dataType: "json"
+  #       data: (term) ->
+  #         q: term
+  # 
+  #       results: (data) -> 
+  #         results: data
 
   $("input.taglist").each ->
     taglist = $(this)

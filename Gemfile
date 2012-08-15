@@ -13,6 +13,8 @@ gem "therubyracer"
 gem "meta_search"
 gem "plupload-rails"
 gem "fullstack"
+gem 'bootstrap-datepicker-rails'
+gem "select2-rails"
 
 group :development do
   gem "jeweler"

@@ -1,22 +1,22 @@
 <% if content_for? :title -%>
   <div class="page-header"><h1><%= yield :title %></h1></div>
 <% else -%>
-  <div class="page-header"><h1><%= t(plural_name, :scope => "activerecord.models") %></h1></div>
+  <div class="page-header"><h1><%= t(collection_name, :scope => "activerecord.models") %></h1></div>
 <% end -%>
 
 <% if partial?('collection') %>
   <%= render :partial => "collection", 
   :locals => { 
-    :collection => instance_variable_get("@#{controller_name}"),
-    :"#{controller_name}" => instance_variable_get("@#{controller_name}")
+    :collection => current_collection,
+    :"#{controller_name}" => current_collection
   } 
   %>
 <% else %>
 
 <div class="mb1">
-	<% if subject.can_create?(controller_name) && controller.action_methods.include?("new") %>
+	<% if subject.can_create?(collection_name) && controller.action_methods.include?("new") %>
     <%= button t('fullstack.admin.new', :default => "New"), 
-               send("new_admin_#{controller_name.singularize}_path"),
+               send("new_admin_#{resource_name}_path"),
                :type => :primary, :icon => :plus, :icon_color => :white %>
 	<% end %>
 
@@ -46,18 +46,36 @@
 
 <% content_for :aside do -%>
 
-<% if partial?('filter') %>
+<% if (!@skip_filter) && (partial?('filter') || title_column(current_resource_class) || has_timestamps?(current_resource_class)) %>
   	<div class="well">
       <div class="mb1">
         <h4><%= t('fullstack.admin.filter', :default => "Filter") %></h4>
       </div>
   		<%= admin_form_for @search, :url => self.send("admin_#{collection_name}_path") , :html => {:method => :get} do |f| %>
+
+      <% if partial?('filter') %>
         <%= render :partial => "filter", :locals => {:f => f} %>
+      <% else %>
+        <%= f.inputs do %>
+
+        <% if tc = title_column(current_resource_class) %>
+            <%=  f.input :"#{tc}_contains" %>
+          <% end %>
+
+          <% if has_timestamps?(current_resource_class) %>
+            <%=  f.input :created_at, :as => :daterange %>
+          <% end %>
+          
+        <% end %>
+
+      <% end %>
+      
         <%= f.buttons do %>
         <%= f.commit_button t('fullstack.admin.filter', :default => "Filter") %>
         <% end %>
   		<% end %>
   	</div>
   <% end %>
+  
 <% end -%>
 

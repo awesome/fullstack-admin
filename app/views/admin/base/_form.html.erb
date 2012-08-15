@@ -1,0 +1,13 @@
+<%= admin_form_for [:"admin", current_resource], :html => {:multipart => true} do |f| -%>
+
+  <%= f.errors %>
+  
+  <%= f.inputs do %>
+    <%= f.resource_inputs(current_resource) %>
+  <% end -%> 
+
+  <%= f.actions do %>
+    <%= f.resource_submit(current_resource) %>
+  <% end %>
+  
+<% end -%>

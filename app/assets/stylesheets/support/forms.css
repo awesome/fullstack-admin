@@ -130,12 +130,14 @@ input.datepicker {
   background-position: 5px center;
   cursor: pointer;
   background-color: white;
+  width: auto;
 }
 
 a.close.datepicker-cancel {
   float: none;
   margin-left: -18px;
   margin-right: 5px;
+  vertical-align: top;
 }
 
 .daterange input.datepicker {
@@ -159,3 +161,10 @@ select,
 	padding: 4px 0.5%;
 }
 
+.datetime > .input > select, .time > .input > select, .date > .input > select {
+	width: auto;
+}
+
+.input {
+  margin-bottom: 18px;
+}

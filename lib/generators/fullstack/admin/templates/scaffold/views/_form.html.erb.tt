@@ -3,14 +3,11 @@
   <%%= f.errors %>
   
   <%%= f.inputs do %>
-
+    <%%= f.resource_inputs(current_resource) %>
   <%% end -%> 
 
-  <%%= form_actions do %>
-  <%%= button (current_resource.persisted? ? t('fullstack.admin.update', :default => "Update") : t('fullstack.admin.create', :default => "Create")),
-    :type => :primary, 
-    :size => :large %>
+  <%%= f.actions do %>
+    <%%= f.resource_submit(current_resource) %>
   <%% end %>
   
-
 <%% end -%>

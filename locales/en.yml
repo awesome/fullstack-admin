@@ -12,6 +12,7 @@ en:
       create: "Create"
       filter: "Filter"
       actions: "Actions"
+      info: "Info"
       are_you_sure: "Are you sure?"
       
       form:

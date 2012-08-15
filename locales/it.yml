@@ -6,6 +6,7 @@ it:
       dashboard: "Dashboard"
       logout: "Logout"
       new: "Crea"
+      update: "Invia"
       show: "Visualizza"
       edit: "Modifica"
       delete: "Elimina"

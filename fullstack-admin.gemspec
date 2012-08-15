@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.18"
+  s.version = "0.1.19"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
-  s.date = "2012-08-13"
+  s.date = "2012-08-15"
   s.description = "Administration interface framework for fullstack"
   s.email = "maurizio.cas@gmail.com"
   s.extra_rdoc_files = [
@@ -949,16 +949,12 @@ Gem::Specification.new do |s|
     "app/controllers/admin/base_controller.rb",
     "app/controllers/admin/responder.rb",
     "app/helpers/admin_form_helper.rb",
-    "app/helpers/resources_helper.rb",
     "app/helpers/scaffold_helper.rb",
     "app/inputs/boolean_input.rb",
-    "app/inputs/checkbox_input.rb",
-    "app/inputs/datepicker_input.rb",
     "app/inputs/daterange_input.rb",
     "app/inputs/datetime_input.rb",
     "app/inputs/image_input.rb",
     "app/inputs/markup_input.rb",
-    "app/inputs/photo_chooser_input.rb",
     "app/inputs/simple_markup_input.rb",
     "app/inputs/string_input.rb",
     "app/inputs/tag_list_input.rb",
@@ -995,11 +991,9 @@ Gem::Specification.new do |s|
     "lib/generators/fullstack/admin/templates/root/app/controllers/admin/dashboard_controller.rb",
     "lib/generators/fullstack/admin/templates/root/app/models/user.rb",
     "lib/generators/fullstack/admin/templates/root/app/views/admin/dashboard/show.html.erb",
-    "lib/generators/fullstack/admin/templates/root/app/views/admin/shared/_nav.html.erb",
     "lib/generators/fullstack/admin/templates/root/db/migrate/%migration_timestamp%_create_ckeditor_assets.rb",
     "lib/generators/fullstack/admin/templates/root/lib/support/user_subject.rb",
     "lib/generators/fullstack/admin/templates/scaffold/controller.rb",
-    "lib/generators/fullstack/admin/templates/scaffold/views/_filter.html.erb.tt",
     "lib/generators/fullstack/admin/templates/scaffold/views/_form.html.erb.tt",
     "lib/generators/fullstack/admin/templates/scaffold/views/_index.html.erb.tt",
     "locales/en.yml",
@@ -1049,6 +1043,8 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<meta_search>, [">= 0"])
       s.add_runtime_dependency(%q<plupload-rails>, [">= 0"])
       s.add_runtime_dependency(%q<fullstack>, [">= 0"])
+      s.add_runtime_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
+      s.add_runtime_dependency(%q<select2-rails>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["~> 3.2"])
@@ -1064,6 +1060,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<meta_search>, [">= 0"])
       s.add_dependency(%q<plupload-rails>, [">= 0"])
       s.add_dependency(%q<fullstack>, [">= 0"])
+      s.add_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
+      s.add_dependency(%q<select2-rails>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
@@ -1080,6 +1078,8 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<meta_search>, [">= 0"])
     s.add_dependency(%q<plupload-rails>, [">= 0"])
     s.add_dependency(%q<fullstack>, [">= 0"])
+    s.add_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
+    s.add_dependency(%q<select2-rails>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end

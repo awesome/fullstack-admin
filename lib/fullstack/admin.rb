@@ -32,8 +32,12 @@ require "less-rails-bootstrap"
 require "meta_search"
 require "plupload-rails"
 require "fullstack"
+require "bootstrap-datepicker-rails"
+require "select2-rails"
 
 require 'fullstack/admin/engine'
+require 'fullstack/admin/resources'
+
 
 module Fullstack
   module Admin

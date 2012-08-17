@@ -18,7 +18,9 @@ it:
       last_updated: "Ultimo aggiornamento"
       ago: "fa"
       ok: "Ok"
+      this_record_contains_some_errors: "Questa linea contiene alcuni errori"
       new_record: "nuovo"
+      drag_to_sort_items: "Trascina per ordinare gli elementi"
       
       form:
         correct_these_errors_and_retry: "Correggi questi errori e riprova"

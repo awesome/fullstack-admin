@@ -17,14 +17,21 @@ module AdminFormHelper
       action(@target.object.persisted? ? :update : :create, :primary => true)
     end
     
-    def form_errors(options = {:exclude => [:slug]})
+    def form_errors(options = {:wrap => true})
+      wrap = options.delete(:wrap)
+      options[:exclude] ||= [:slug]
       f = @target
       unless f.object.errors.empty?
-        @target.template.content_tag :div, :class => "alert alert-block" do
-          @target.template.link_to "&times;", :class => "close", :data => {:dismiss => "alert"}
-          @target.template.content_tag(:h4, I18n.t('fullstack.admin.form.correct_these_errors_and_retry', :default => "Correct these errors and retry"), :class => "alert-heading")
+        if wrap
+          @target.template.content_tag :div, :class => "alert alert-block" do
+            @target.template.link_to "&times;", :class => "close", :data => {:dismiss => "alert"}
+            @target.template.content_tag(:h4, I18n.t('fullstack.admin.form.correct_these_errors_and_retry', :default => "Correct these errors and retry"), :class => "alert-heading")
+            f.semantic_errors *(f.object.errors.keys - (options[:exclude] || []))
+          end
+        else
           f.semantic_errors *(f.object.errors.keys - (options[:exclude] || []))
         end
+        
       end
     end
     alias :errors :form_errors
@@ -80,7 +87,16 @@ module AdminFormHelper
         
       }
       
-      buff.html_safe
+      buff = self.inputs do
+        buff.html_safe
+      end
+      
+      model.reflect_on_all_associations(:has_many).select {|m| m.options[:autosave] }.each do |assoc|
+        buff << association_inputs(assoc.name)
+      end
+      
+      buff
+
     end
  
     def resource_submit
@@ -100,35 +116,9 @@ module AdminFormHelper
     end
 
     def association_inputs(association)
-      @target.template.content_tag :div,:class => "well" do
-      admin_fields_for(association) do |f|
-        
-        partial_name = association.to_s.singularize + "_fields"
-        
-        if @target.template.partial?(partial_name)
-           @target.template.render(:partial => partial_name, :f => f)
-        else
-          f.resource_inputs
-        end
-      
-      end
-      end
+       @target.template.render :partial => "associated_resources_table", :locals => { 
+        :association => association, :f => self } 
     end
-
-    # def link_to_remove_fields(name)
-    #   @target.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
-    # end
-    #   
-    # def link_to_add_fields(name, association)
-    #   new_object = @target.object.class.reflect_on_association(association).klass.new
-    #   
-    #   partial_name = association.to_s.singularize + "_fields"
-    #   fields = admin_fields_for(association, new_object, :child_index => "new_#{association}") do |builder|        
-    #     
-    #   end
-    #   @target.template.link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
-    # end
-
 
   end # ~
    

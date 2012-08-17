@@ -17,6 +17,8 @@ en:
       last_updated: "Last updated"
       ago: "ago"
       ok: "Ok"
+      this_record_contains_some_errors: "This record contains some errors"
+      drag_to_sort_items: "Drag to sort items"
       
       form:
         correct_these_errors_and_retry: "Correct these errors and retry"

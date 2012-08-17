@@ -3,9 +3,7 @@
 $(document).ready ->
   
   $(".modal-dialog").modal({backdrop: true, keyboard: true, show: false, static: false})
-  $("[data-tip]").tooltip title: (e) ->
-    $(this).data "tip"
-
+  
   $(".btn.disabled").on "click", (e) ->
     e.stopPropagation()
     false
@@ -21,5 +19,6 @@ $(document).ready ->
     ($ @).closest('.modal').modal('hide')
 
   $("[data-toggle='popover']").popover()
+  $("[data-toggle='tooltip']").tooltip()
   
   $('.carousel').carousel()

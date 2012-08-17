@@ -17,6 +17,10 @@ $(document).ready ->
       label_input = $("#" + label_input_id)
       label_input.change ->
         associated_resource.find(".associated-resource-label").text(label_input.val())
+  
+  update_positions = (sortable) ->
+    sortable.find('input.associated-resource-position').each (i, e) ->
+      $(@).val(i)
 
   $(".btn-add-associated-resource").click ->
     associated_resources        = $(@).closest(".associated-resources")
@@ -26,4 +30,9 @@ $(document).ready ->
     template_instance           = $(resource_fields_template.html().replace(/___index___/g, new_id))
     associated_resources_index.append(template_instance)
     autoupdate_labels(associated_resources_index.find('.associated-resource:last'))
-    
+    update_positions associated_resources_index
+  
+  autoupdate_labels($('.associated-resource'))
+  
+  $('.positionable .sortable').live 'sortupdate', ->
+    update_positions $(@)

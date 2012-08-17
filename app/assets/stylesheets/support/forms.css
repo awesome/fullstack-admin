@@ -183,3 +183,31 @@ select,
   display: none
 }
 
+
+.help-inline
+{
+  padding: 0px 35px 8px 14px;
+  margin-bottom: 18px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #FCF8E3;
+  border: 1px solid #FBEED5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #C09853;
+  margin-top: 0;
+}
+
+.help-inline:before
+{
+ content: "";
+ border: solid 10px transparent; /* set all borders to 10 pixels width */
+ border-bottom-color: #FCF8E3; /* the callout */
+ border-top: 0; /* we do not need the bottom border in this case */
+ width: 0;
+ height: 0;
+ overflow: hidden;
+ display: block;
+ position: relative;
+ top: -9px; /* border-width of the :after element + padding of the root element */
+}

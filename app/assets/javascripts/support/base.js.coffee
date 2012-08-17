@@ -14,3 +14,13 @@ $(document).ready ->
     else
       links.show "fast"
       button.addClass "showing"
+
+fixHelper = (e, ui) ->
+  ui.children().each ->
+    self = $ @
+    self.width self.width()
+  ui
+  
+$("tbody.sortable").sortable({ axis: 'y', items: 'tr', helper: fixHelper,  handle: '.handle'  })
+
+    

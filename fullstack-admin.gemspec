@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.19"
+  s.version = "0.1.20"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
-  s.date = "2012-08-15"
+  s.date = "2012-08-17"
   s.description = "Administration interface framework for fullstack"
   s.email = "maurizio.cas@gmail.com"
   s.extra_rdoc_files = [
@@ -1003,8 +1003,6 @@ Gem::Specification.new do |s|
     "lib/generators/fullstack/admin/templates/scaffold/controller.rb",
     "lib/generators/fullstack/admin/templates/scaffold/views/_form.html.erb.tt",
     "lib/generators/fullstack/admin/templates/scaffold/views/_index.html.erb.tt",
-    "locales/en.yml",
-    "locales/it.yml",
     "vendor/assets/javascripts/ajax-chosen.js",
     "vendor/assets/javascripts/angular.js",
     "vendor/assets/javascripts/bootstrap.js",

@@ -1,0 +1,63 @@
+<% title_column_or_id = title_column(f.object.class) || "id" %>
+<% resource_title     =  f.object.send(title_column_or_id) %> 
+
+<tr <%= 'data-new-record' if f.object.new_record? %> class="associated-resource" data-label-input="menu_links_attributes_<%= index %>_<%= title_column_or_id  %>">
+  <td>
+    <div class="fade-if-deleted">
+      <% if f.object.persisted? %>
+        <span class='associated-resource-label'><%= resource_title %></span>
+      <% else %>
+        <span class='associated-resource-label'><i>[ <%= t('fullstack.admin.new_record', :default => "new record") %> ]</i></span>
+      <% end %>
+    </div>
+  </td>
+  <td>
+  
+    <div class="modal hide" id="<%= resource_name %>_<%= association %>_fields_<%= index %>">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h3>
+        <%= t('fullstack.admin.edit', :default => "Edit") %>
+        
+        <% if f.object.persisted? %>
+          "<span class='associated-resource-label'><%= resource_title %></span>"
+        <% else %>
+          "<span class='associated-resource-label'>[ <%= t('fullstack.admin.new_record', :default => "new record") %> ]</span>"
+        <% end %>
+        
+        </h3>
+      </div>
+      <div class="modal-body">
+        <%= f.resource_inputs %>
+        <%= f.hidden_field(:_destroy, :class => "destroy-associated-resource") %>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal"><%= t('fullstack.admin.ok', :default => "Ok") %></a>
+      </div>
+    </div>
+  
+  <span class="hide-if-deleted">
+    <% if f.object.errors.any? %>
+    <span data-toggle="popover" title="Your association contains some errors" data-content='<%= h("#{f.errors}") %>' ><%= icon :"warning-sign"  %></span>
+    <% end %>
+    
+    <% if subject.can_edit?(f.object) %>
+    <%=  button t('fullstack.admin.edit', :default => "Edit"), "##{resource_name}_#{association}_fields_#{index}", :data => {:toggle => :modal} %>        
+    <% end %>
+  </span>
+  
+  <% if subject.can_destroy?(f.object) %>
+    <%= button(
+            t('fullstack.admin.delete', :default => "Delete"),
+            "javascript:void(0)",
+            :type => :danger, :class => "btn-delete-associated-resource", :"data-toggle" => :button
+            )
+    %>
+  <% end %>
+
+    
+    
+  </td>
+</tr>
+
+

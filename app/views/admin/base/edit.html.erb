@@ -3,12 +3,14 @@
   <% if content_for? :title -%>
     <%= yield :title %>
   <% else -%>
-    <%= t('fullstack.admin.edit', :default => "Edit") %> `<%= title_for(current_resource) %>`
+    <%= t('fullstack.admin.edit', :default => "Edit") %> "<%= title_for(current_resource) %>"
   <% end -%>
   </h1>
-  <div>
-    <i><%= current_resource.respond_to?(:updated_at) ? l(current_resource.updated_at, :format => :long) : "" %></i>
+  <% if current_resource.respond_to?(:updated_at) %>
+  <div  class="resource_updated_at">
+      <%= t('fullstack.admin.last_updated', :default => "Last updated") %>: <%= distance_of_time_in_words_to_now(current_resource.updated_at) %> <%= t('fullstack.admin.ago', :default => "ago") %>
   </div>
+  <% end %>
 </div>
 
 

@@ -86,7 +86,7 @@ str
       end
       
       def title_column
-        ( model.column_names & %W(title name label browser_title seo_title seo_name key claim email) ).first
+        ( model.column_names.map {|c| } & %W(title name label browser_title seo_title seo_name key claim email) ).first
       end
       
       def controller_class_name

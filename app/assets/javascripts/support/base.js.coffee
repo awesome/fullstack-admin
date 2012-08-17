@@ -3,7 +3,6 @@
 #= require jquery-ui
 #= require notify
 #= require jquery.sticky
-#= require angular
 
 $(document).ready ->
   $(".btn.toggle-delete").on "click", (e) ->

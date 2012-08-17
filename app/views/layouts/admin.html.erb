@@ -45,7 +45,7 @@
 
       <% if flash[sym].present? %>
         <%= javascript_tag do %>
-        $.notify.notice('<%= j "#{flash[sym]}" %>');
+          $.notify.<%= "#{sym}" %>('<%= j "#{flash[sym]}" %>');
         <% end %>
 
         <% flash.discard(sym) %>

@@ -1,0 +1,21 @@
+<% association_class = f.object.class.reflect_on_association(association).klass %>
+<%= f.inputs t(association, :scope => 'activerecord.models', :default => association.to_s.humanize), :class => "associated-resources" do %>
+
+  <table class="table table-bordered table-striped index-table associated-resources-index">
+    <tr><th><%= labelize_attribute_name(title_column(association_class)) %></th><th style="width:30%;"><%= t('fullstack.admin.actions', :default => "Actions") %></th></tr>
+    <% i = 0 %>
+    <%= f.admin_fields_for association do |f| %>
+    <%= render :partial => "nested_form", :locals => {:index => i, :f => f, :resource_name => resource_name, :association => association} %>
+      <% i += 1 %>
+    <% end %>    
+  </table>
+  
+  <script type="text/html" charset="utf-8" class="resource-fields-template">
+    <%= f.admin_fields_for(association, association_class.new, :child_index => "___index___") do |f| %>
+      <%= render :partial => "nested_form", :locals => {:index => "___index___", :f => f, :resource_name => resource_name, :association => association} %>
+    <% end %>
+  </script>
+
+  <%= button t('fullstack.admin.add', :default => "Add"), "javascript:void(0);", :class => "btn-add-associated-resource" %>
+  
+<% end %>

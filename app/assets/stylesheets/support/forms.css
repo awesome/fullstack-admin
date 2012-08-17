@@ -168,3 +168,18 @@ select,
 .input {
   margin-bottom: 18px;
 }
+
+
+.resource_updated_at {
+  font: italic 12px/36px Arial, Helvetica, sans-serif;
+  color: #888;
+}  
+
+.associated-resource.deleted .fade-if-deleted {
+  opacity: 0.5;
+}
+
+.associated-resource.deleted .hide-if-deleted {
+  display: none
+}
+

@@ -10,7 +10,7 @@
 #= require jquery.remotipart
 #= require jquery.validate
 #= require ckeditor/init
-
+#= require support/nested_forms
 ## require jquery.form
 
 

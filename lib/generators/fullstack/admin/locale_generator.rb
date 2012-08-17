@@ -4,7 +4,7 @@ module Fullstack
       source_root File.expand_path('../../../../../locales', __FILE__)
     
       def install
-        copy_file "#{name}.yml", Rails.root.join("config", "locales", "fullstack.admin.#{name}.yml")
+        create_file Rails.root.join("config", "locales", "fullstack.admin.#{name}.yml")
       end
     
     end

@@ -20,5 +20,6 @@ $(document).ready ->
   $("[data-dismiss='modal']").live 'click', ->
     ($ @).closest('.modal').modal('hide')
 
-  $("[rel='popover']").popover()
+  $("[data-toggle='popover']").popover()
+  
   $('.carousel').carousel()

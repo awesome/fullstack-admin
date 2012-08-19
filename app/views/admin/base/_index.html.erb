@@ -3,15 +3,27 @@
 <% if thead -%>
     <th><%= sort_link title_column_or_id %></th>
 
+<% if title_column_or_id == "id" %>
+  <% if meth = name_method_for(current_resource_class) %>
+    <th><%= t("helpers.label.#{meth}") %></th>
+  <% end %>
+<% end %>
+
 <% if has_timestamps?(current_resource_class) %>
     <th><%= sort_link :created_at %></th>
 <% end %>
-
     <th><%= t('fullstack.admin.actions', :default => "Actions") %></th>
 <% end -%>
 
 <% if tbody -%>
     <td><%= link_to (content.send(title_column_or_id)), [:edit,  :admin, content]  %></td>
+
+<% if title_column_or_id == "id" %>
+  <% if (name = name_for(content)).present? %>
+  <td><%= link_to name, [:edit,  :admin, content]  %></td>
+  <% end %>
+<% end %>
+
 
 <% if has_timestamps?(current_resource_class) %>
     <td><%= l content.created_at.to_date, :format => :long %></td>

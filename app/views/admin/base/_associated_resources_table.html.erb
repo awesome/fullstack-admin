@@ -1,12 +1,12 @@
 <% association_class = f.object.class.reflect_on_association(association).klass %>
 <% resource_name = f.object.class.name.demodulize.underscore %>
-<%= f.inputs t(association, :scope => 'activerecord.models', :default => association.to_s.humanize), :class => "associated-resources" do %>
+<%= f.inputs t(association, :scope => 'fullstack.admin.resources', :default => association.to_s.humanize), :class => "associated-resources" do %>
 
 <table class="table table-bordered table-striped index-table <%= 'positionable' if positionable?(association_class) %>" >
     <thead>
       <tr>
         <% if positionable?(association_class) %>
-        <th><%= tag :i,  :class => "icon icon-th-list", :"data-toggle" => "tooltip", :title => t('fullstack.admin.drag_to_sort_items', :default => "Drag to sort items") %></th>
+        <th style="width:20px"><%= tag :i,  :class => "icon icon-th-list", :"data-toggle" => "tooltip", :title => t('fullstack.admin.drag_to_sort_items', :default => "Drag to sort items") %></th>
         <% end %>
         <th><%= labelize_attribute_name(title_column(association_class)) %></th><th style="width:30%;"><%= t('fullstack.admin.actions', :default => "Actions") %></th></tr>
     </thead>

@@ -13,6 +13,7 @@ it:
       filter: "Filtra"
       create: "Crea"
       actions: "Azioni"
+      add: "Aggiungi"
       
       are_you_sure: "Sei sicuro?"
       last_updated: "Ultimo aggiornamento"

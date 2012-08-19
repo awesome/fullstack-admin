@@ -20,10 +20,10 @@
 
     <% Fullstack::Admin.resources.each do |rog| %>
         <% if rog.type == :group %> 
-        <%= nav_header t(rog.name, :scope => 'fullstack.admin.groups', :default => rog.name.to_s.humanize) %>
+        <%= nav_header t("fullstack.admin.groups.#{rog.name}", :default => rog.name.to_s.humanize) %>
           
         <% elsif rog.type == :resource %>
-          <%= nav_item t(rog.name, :scope => 'fullstack.admin.resources', :default => rog.name.to_s.humanize), [:admin, rog.name] %>
+          <%= nav_item t("fullstack.admin.resources.#{rog.name}", :default => rog.name.to_s.humanize), [:admin, rog.name] %>
         <% end %>
     <% end %>
 

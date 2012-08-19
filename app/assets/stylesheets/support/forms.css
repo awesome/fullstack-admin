@@ -211,3 +211,8 @@ select,
  position: relative;
  top: -9px; /* border-width of the :after element + padding of the root element */
 }
+
+.boolean > .input label {
+  display: inline-block;
+  margin-left: 10px;
+}

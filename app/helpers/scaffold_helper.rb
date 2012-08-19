@@ -21,7 +21,7 @@ module ScaffoldHelper
     end
 
     def labelize_attribute_name(method)
-      label(:object, method).gsub("<label for=\"object_#{method}\">", "").gsub("</label>", "")
+      I18n.t("helpers.label.#{method}", :default => method.to_s.humanize)
     end
 
     def sort_link(method)

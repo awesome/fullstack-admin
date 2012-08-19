@@ -82,7 +82,8 @@ module AdminFormHelper
             buff << @target.input(k, :as => :select)
           end
         else
-          buff << @target.input(k)
+          
+            buff << @target.input(k)
         end
         
       }
@@ -96,7 +97,6 @@ module AdminFormHelper
       end
       
       buff
-
     end
  
     def resource_submit

@@ -4,7 +4,7 @@
 <tr <%= 'data-new-record' if f.object.new_record? %> class="associated-resource" data-label-input="<%= resource_name %>_<%= association %>_attributes_<%= index %>_<%= title_column_or_id  %>">
   
   <% if positionable?(f.object) %>
-    <td style="width:20px">
+    <td>
       <%= image_tag "drag-handle.png", :class => "handle" %>
     </td>
   <% end %>

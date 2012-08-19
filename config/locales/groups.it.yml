@@ -1,0 +1,7 @@
+it:
+  fullstack:
+    admin:
+      groups:
+        website: "Sito Web"
+        contents: "Contenuti"
+        users: "Utenti"

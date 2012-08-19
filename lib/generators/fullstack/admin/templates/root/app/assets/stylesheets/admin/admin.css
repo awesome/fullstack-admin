@@ -1,14 +1,4 @@
 /*
-*= require support/base
-*= require support/bootstrap
-*= require support/forms
-*= require support/ajax_loading
-*= require support/uploads
-*/
+ *= require admin/base
+ */
 
-@media all and (min-width:980px) {
-  body {
-    position: relative;
-    padding-top: 68px;
-  }
-}

@@ -52,10 +52,6 @@ eos
       
       end
       
-      def english_localizations
-        generate "fullstack:admin:locale en"
-      end
-
 
       def append_routes
         src = <<-eos

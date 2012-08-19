@@ -48,13 +48,13 @@ module AdminFormHelper
       options = args.extract_options!
       
       only_attributes = options[:only] || []
-      
-      except_attributes = options[:except] || model.protected_attributes.to_a + %W(created_at updated_at slug slugs lat lng position)
+      except_arg = options[:except] || []
+      except_attributes = except_arg + model.protected_attributes.to_a + %W(created_at updated_at slug slugs lat lng position)
       
       only_attributes.map! {|a| :"#{a}"}
       except_attributes.map! {|a| :"#{a}"}
               
-      columns = model.attribute_names.map! {|a| :"#{a}"}
+      columns = model.schema.hierarchy_field_names.map! {|a| :"#{a}"}
       
       if only_attributes.any?
         columns = columns.select {|k| only_attributes.include?(k)}
@@ -83,7 +83,18 @@ module AdminFormHelper
           end
         else
           
-            buff << @target.input(k)
+          if field = model.schema.hierarchy_fields[k]
+            if field.options[:markup]
+              buff << @target.input(k, :as => :markup)
+            elsif field.options[:simple_markup]
+              buff << @target.input(k, :as => :simple_markup)
+            else
+              buff << @target.input(k)
+            end
+          else 
+            buff << @target.input(k)          
+          end
+          
         end
         
       }

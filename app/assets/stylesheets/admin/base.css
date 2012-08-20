@@ -16,3 +16,18 @@
 #left-aside .nav {
   padding-bottom: 180px;
 }
+
+.thumbnails > li {
+  float: left;
+  margin-left: 0 !important;
+  margin-right: 16px;
+}
+
+.chzn-container-multi .chzn-choices .search-choice {
+  display: block;
+  width: 96%;
+}
+
+.chzn-container-active .chzn-choices {
+  padding-top: 4px;
+}

@@ -9,6 +9,7 @@ it:
       text: "Testo"
       date: "Data"
       tag_list: "Tag"
+      caption: "Didascalia"
       section: "Sezione"
       created_at: "Data di creazione"
       published: "Pubblicato"
@@ -56,4 +57,4 @@ it:
       speaker: "Relatore"
       learning_module: "Modulo didattico"
       lecture_room: "Classe"
-      
+      speakers: "Relatori"

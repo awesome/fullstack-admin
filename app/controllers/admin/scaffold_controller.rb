@@ -1,5 +1,6 @@
 class Admin::ScaffoldController < Admin::BaseController
   respond_to :html, :js
+  before_filter :prepend_resource_views_prefix
     
   def index
     @search = current_resource_class.search(params[:search])
@@ -50,6 +51,10 @@ class Admin::ScaffoldController < Admin::BaseController
   end
 
   private 
+
+  def prepend_resource_views_prefix
+    lookup_context.prefixes.unshift "admin/#{collection_name}"
+  end
 
   def set_object(value)
     instance_variable_set("@#{resource_name}", value)    

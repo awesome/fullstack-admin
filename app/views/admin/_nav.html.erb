@@ -1,12 +1,12 @@
 <% content_for :menu do -%>
   
   <%= nav do %>
-  <%= nav_item t('fullstack.admin.dashboard', :default => "Dashboard"), admin_root_path, :icon => "cog" , :icon_color => :white %>
+  <%= nav_item t('fullstack.admin.dashboard', :default => "Dashboard"), admin_root_path, :icon => "cog"  %>
   <% end %>
   
   <%= nav(:class => 'float right') do %>
-  <%= nav_item t('fullstack.admin.homepage', :default => "Homepage"), "/", :icon => "home" , :icon_color => :white %>
-    <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :icon => "user" , :icon_color => :white do %>
+  <%= nav_item t('fullstack.admin.homepage', :default => "Homepage"), "/", :icon => "home" %>
+    <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :icon => "user" do %>
         <%= nav_item t('fullstack.admin.logout', :default => "Logout"), destroy_user_session_path, :method => :delete %>
     <% end %>
   <% end %>

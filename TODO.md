@@ -1,16 +1,12 @@
 # Fullstack Admin Roadmap
 
+* Fix production issues
+
 * Multiple choice input with chosen
   
 * Image inputs + detect smaller image size for thumbnails
 
 * Inference of input type from model
-  eg.
-    field :text, :text, :markup => true
-    ->
-    input :text, :as => :markup
-    
-  or
     has_attached :photo, :image => true
     ->
     input :photo, :as => :image

@@ -1,4 +1,4 @@
-class MarkupInput < FormtasticBootstrap::Inputs::TextInput
+class SimpleMarkupInput < FormtasticBootstrap::Inputs::TextInput
 
   def input_html_options
     super.merge(:class => "markup")

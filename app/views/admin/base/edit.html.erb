@@ -6,7 +6,7 @@
     <%= t('fullstack.admin.edit', :default => "Edit") %> "<%= title_for(current_resource) %>"
   <% end -%>
   </h1>
-  <% if current_resource.respond_to?(:updated_at) %>
+  <% if current_resource.respond_to?(:updated_at) && current_resource.updated_at %>
   <div  class="resource_updated_at">
       <%= t('fullstack.admin.last_updated', :default => "Last updated") %>: <%= distance_of_time_in_words_to_now(current_resource.updated_at) %> <%= t('fullstack.admin.ago', :default => "ago") %>
   </div>

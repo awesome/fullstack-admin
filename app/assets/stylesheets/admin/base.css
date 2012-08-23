@@ -26,6 +26,7 @@
 .chzn-container-multi .chzn-choices .search-choice {
   display: block;
   width: 96%;
+  line-height: 20px !important;
 }
 
 .chzn-container-active .chzn-choices {
@@ -34,4 +35,12 @@
 
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close {
   background: url(/assets/chosen-sprite.png) right top no-repeat !important;
+  margin-top: 3px;
+}
+
+
+.chzn-container-multi .chzn-choices .search-field {
+  background: url(/assets/iconic/gray/magnifying_glass_12x12.png) no-repeat left center;
+  margin-left: 7px !important;
+  padding-left: 12px !important;
 }

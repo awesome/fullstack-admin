@@ -32,6 +32,6 @@
   padding-top: 4px;
 }
 
-chzn-container-multi .chzn-choices .search-choice .search-choice-close {
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close {
   background: url(/assets/chosen-sprite.png) right top no-repeat !important;
 }

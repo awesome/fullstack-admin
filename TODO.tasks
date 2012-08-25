@@ -1,0 +1,47 @@
+===========================
+= Fullstack Admin Roadmap =
+===========================
+
+- fix delete not removing rows/thumbnails on success
+
+✓ Better rendering for boolean input
+
+- Nested forms for Has Many associations 
+  ✓ Sorting
+  ✓ autogenerate from has_many
+  - skip input for associated model
+  
+✓ Fix production issues
+
+✓ Multiple choice input with chosen
+
+- Form for accepts_nested_attributes_for and has_one 
+
+- Image inputs
+    - detect smaller image size for thumbnails
+    - inference of input type from model
+
+- Optional tracking of author/updaters for every model (CMS?)
+
+
+==================
+= Long Run Goals =
+==================
+
+- Use only twitter bootstrap (drop jquery-ui)
+  - switch to bootstrap datepicker
+  - find alternative to sortable
+  
+- Multiple scopes
+- Tags input with chosen
+
+- Alternated fields:
+  = Group of fields that can be setted exclusively
+  = eg
+  = field :age
+  = field :car, :string, :meaningful_if => :age.gt(18) # <- translated into javascript validation
+
+  = virtual_field :link_method, :in => %W(page external)
+
+  = belongs_to :related_page, :meaningful_if => :link_method.eq("page") 
+  = field :url,               :meaningful_if => :link_method.eq("external")

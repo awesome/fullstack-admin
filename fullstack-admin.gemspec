@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     "Gemfile.lock",
     "README.md",
     "Rakefile",
+    "TODO.tasks",
     "VERSION",
     "app/assets/images/drag-handle.png",
     "app/assets/images/iconic/gray/ampersand_10x16.png",

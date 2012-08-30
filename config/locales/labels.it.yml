@@ -29,7 +29,7 @@ it:
       image: "Immagine"
       icon: "Icona"
       external: "Esterno"
-      nofollow: "Nofollow"
+      nofollow: "Non segnalare ai motori di ricerca"
       alignment_right: "Allinea a destra"
       browser_title: "Titolo del browser"
       seo_title: "Titolo SEO" 

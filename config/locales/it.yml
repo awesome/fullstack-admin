@@ -37,7 +37,7 @@ it:
         success:
           generic: "Cambiamenti salvati con successo"
           update: "Documento salvato con successo"
-          delete: "Document eliminato con successo"
+          delete: "Documento eliminato con successo"
 
         error:
           generic: "Cambiamenti non salvati a causa di un errore"

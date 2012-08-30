@@ -2,27 +2,37 @@
 = Fullstack Admin Roadmap =
 ===========================
 
-- fix delete not removing rows/thumbnails on success
+✓ fix delete not removing rows/thumbnails on success
 
 ✓ Better rendering for boolean input
 
-- Nested forms for Has Many associations 
+✓ Nested forms for Has Many associations 
   ✓ Sorting
   ✓ autogenerate from has_many
-  - skip input for associated model
+  ✓ skip input for associated model
   
 ✓ Fix production issues
 
 ✓ Multiple choice input with chosen
 
+✓ Image inputs NB. Changed to file_input
+    ✓ detect smaller image size for thumbnails
+    ✓ inference of input type from model
+
+✓ Ckeditor: upload assets to S3 according to app.config 
+
+- Localizable models
+    - Create Localized module: a model is localizable if has a :locale field (cms?)
+    - Add a scope to Localized to find models within the current locale (cms?)
+    
+    - Create an option to specify the admin_locale
+    - add a before filter to Admin::BaseController that uses the default locale for the admin
+    - Split localized models index into tabs (either through ajax?)
+    - Let the programmer decide a default locale and a set of available locales
+    - Translations for locale codes
+    
 - Form for accepts_nested_attributes_for and has_one 
-
-- Image inputs
-    - detect smaller image size for thumbnails
-    - inference of input type from model
-
 - Optional tracking of author/updaters for every model (CMS?)
-
 
 ==================
 = Long Run Goals =

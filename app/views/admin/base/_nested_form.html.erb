@@ -40,7 +40,7 @@
         <% begin %>
         <%= render :partial => "admin/#{association}/associated_fields", :locals => {:f => f} %>
         <% rescue ActionView::MissingTemplate %>
-          <%= f.resource_inputs %>
+          <%= f.resource_inputs :except => [resource_name] %>
         <% end %>
         
         <%= f.hidden_field(:_destroy, :class => "destroy-associated-resource") %>

@@ -51,18 +51,51 @@ module AdminFormHelper
       except_arg = options[:except] || []
       except_attributes = except_arg + model.protected_attributes.to_a + %W(created_at updated_at slug slugs lat lng position)
       
-      only_attributes.map! {|a| :"#{a}"}
-      except_attributes.map! {|a| :"#{a}"}
-              
-      columns = model.schema.hierarchy_field_names.map! {|a| :"#{a}"}
+      only_attributes.map! {|a| a.to_s}
+      except_attributes.map! {|a| a.to_s}
+      
+      columns = model.schema.hierarchy_field_names
+      
+      # ===============
+      # = Attachments =
+      # ===============
     
       attachment_definitions = (model.attachment_definitions || {}).keys
       attachment_columns = attachment_definitions.map {|a|
-        [:"#{a}_file_name", :"#{a}_file_size", :"#{a}_content_type", :"#{a}_updated_at"]
+        ["#{a}_file_name", "#{a}_file_size", "#{a}_content_type", "#{a}_updated_at"]
         }.flatten
-      
+            
       columns -= attachment_columns
       columns += attachment_definitions
+
+          
+      # ================
+      # = Associations =
+      # ================
+
+      columns = columns.map {|field_name|
+         field_name.to_s.gsub(/_id$/, "").gsub(/_type$/, "")
+      }.uniq
+      
+      belongs_to_associations = model.reflect_on_all_associations(:belongs_to).select {|a|
+        !a.options[:polymorphic]
+      }.map {|assoc| assoc.name.to_s}
+    
+      polymorphic_associations = model.reflect_on_all_associations(:belongs_to).select {|a|
+        a.options[:polymorphic]
+      }.map {|assoc| assoc.name.to_s}
+    
+      has_many_associations = model.reflect_on_all_associations(:has_many).select {|a| 
+        a.options[:autosave]
+      }.map {|assoc| assoc.name.to_s}
+      
+      columns -= polymorphic_associations
+      columns += has_many_associations
+      
+      
+      # ====================================
+      # = Intersect with :only and :except =
+      # ====================================
       
       if only_attributes.any?
         columns = columns.select {|k| only_attributes.include?(k)}
@@ -70,42 +103,42 @@ module AdminFormHelper
         columns = columns.delete_if {|k| except_attributes.include?(k)}
       end
 
+
+      # =============
+      # = Rendering =
+      # =============
+      
       buff = ""
         
-      columns.each {|k|
-        k = "#{k}".gsub(/_ids?$/, "").gsub(/_type$/, "").to_sym
-        assoc = model.reflect_on_association(k) 
-        if assoc && assoc.belongs_to?
-          unless assoc.options[:polymorphic]
-            buff << @target.input(k, :as => :select)
-          end
-        else
-          
-          if field = model.schema.hierarchy_fields[k]
-            if field.options[:markup]
-              buff << @target.input(k, :as => :markup)
-            elsif field.options[:simple_markup]
-              buff << @target.input(k, :as => :simple_markup)
-            else
-              buff << @target.input(k)
-            end
-          else 
-            buff << @target.input(k)          
-          end
-          
-        end
+      columns.each do |column|
+        sym = column.to_sym
+        field = model.schema.hierarchy_fields[sym]
+        is_belongs_to_associaiton = belongs_to_associations.include?(column)
+        is_has_many_association = has_many_associations.include?(column)
         
-      }
+        buff << if is_belongs_to_associaiton
+          @target.input(sym, :as => :select)
+        
+        elsif is_has_many_association
+           association_inputs(sym)
+         else
+           input_type = if field && field.options[:markup]
+             :markup
+           elsif field && field.options[:simple_markup]
+             :simple_markup
+           else
+             nil
+           end
+           
+           @target.input(sym, :as => input_type)
+
+        end
+      end
       
-      buff = self.inputs do
+      inputs do
         buff.html_safe
       end
-      
-      model.reflect_on_all_associations(:has_many).select {|m| m.options[:autosave] }.each do |assoc|
-        buff << association_inputs(assoc.name)
-      end
-      
-      buff
+    
     end
  
     def resource_submit

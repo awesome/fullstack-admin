@@ -1,4 +1,4 @@
-<% if instance_variable_get("@#{controller_name.singularize}").destroyed? %>
+<% if current_resource.destroyed? %>
 $("a[data-method='delete']").filter("[href='<%=j request.path %>']").closest("tr, li").remove()
 notify_notice('<%=j t("fullstack.admin.flash.success.delete")  %>')
 <% else %>

@@ -11,6 +11,8 @@
 #= require jquery.validate
 #= require ckeditor/init
 #= require support/nested_forms
+#= require support/file_input
+
 ## require jquery.form
 
 

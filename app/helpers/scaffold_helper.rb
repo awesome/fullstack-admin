@@ -42,12 +42,6 @@ module ScaffoldHelper
       model.columns_hash["position"]
     end
     
-    def title_column(model)
-      @_title_columns ||= {}
-      @_title_columns[model] ||= ( model.column_names.map{ |c| c.to_s } & %W(title name label browser_title seo_title seo_name key claim email) ).first
-    end
-    
-    
     def skip_filter!
       @skip_filter = true
     end

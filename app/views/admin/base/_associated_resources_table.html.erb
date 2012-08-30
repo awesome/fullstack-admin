@@ -22,7 +22,7 @@
    
   </table>
   
-  <script type="text/html" charset="utf-8" class="resource-fields-template">
+  <script type="text/html" class="resource-fields-template">
     <%= f.admin_fields_for(association, association_class.new, :child_index => "___index___") do |f| %>
       <%= render :partial => "nested_form", :locals => {:index => "___index___", :f => f, :resource_name => resource_name, :association => association} %>
     <% end %>

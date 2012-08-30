@@ -26,7 +26,8 @@ class Admin::BaseController < ApplicationController
                 :collection_name,
                 :current_resource_class,
                 :current_resource, 
-                :current_collection
+                :current_collection,
+                :title_column
 
 
   def current_resource_class
@@ -52,5 +53,11 @@ class Admin::BaseController < ApplicationController
   def current_collection
     instance_variable_get("@#{collection_name}")
   end
+  
+  def title_column(model)
+    @_title_columns ||= {}
+    @_title_columns[model] ||= ( model.column_names.map{ |c| c.to_s } & %W(title name label browser_title seo_title seo_name key claim email) ).first
+  end
+  
   
 end

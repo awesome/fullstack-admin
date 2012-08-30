@@ -21,9 +21,14 @@ it:
       upload: "Carica"
       ago: "fa"
       ok: "Ok"
+      manual_entry: "Inserimento manuale"
       this_record_contains_some_errors: "Questa linea contiene alcuni errori"
       new_record: "nuovo"
       drag_to_sort_items: "Trascina per ordinare gli elementi"
+      no_file_uploaded: "Nessun file caricato"
+      choose_a_file: "Carica"
+      change: "Cambia"
+      preview: "Anteprima"
       
       form:
         correct_these_errors_and_retry: "Correggi questi errori e riprova"

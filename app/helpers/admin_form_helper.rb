@@ -55,16 +55,7 @@ module AdminFormHelper
       except_attributes.map! {|a| :"#{a}"}
               
       columns = model.schema.hierarchy_field_names.map! {|a| :"#{a}"}
-      
-      if only_attributes.any?
-        columns = columns.select {|k| only_attributes.include?(k)}
-      elsif except_attributes.any?
-        columns = columns.delete_if {|k| except_attributes.include?(k)}
-      end
-
-
-      buff = ""
-      
+    
       attachment_definitions = (model.attachment_definitions || {}).keys
       attachment_columns = attachment_definitions.map {|a|
         [:"#{a}_file_name", :"#{a}_file_size", :"#{a}_content_type", :"#{a}_updated_at"]
@@ -72,8 +63,15 @@ module AdminFormHelper
       
       columns -= attachment_columns
       columns += attachment_definitions
-            
       
+      if only_attributes.any?
+        columns = columns.select {|k| only_attributes.include?(k)}
+      elsif except_attributes.any?
+        columns = columns.delete_if {|k| except_attributes.include?(k)}
+      end
+
+      buff = ""
+        
       columns.each {|k|
         k = "#{k}".gsub(/_ids?$/, "").gsub(/_type$/, "").to_sym
         assoc = model.reflect_on_association(k) 

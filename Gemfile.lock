@@ -228,7 +228,7 @@ DEPENDENCIES
   chosen-rails
   ckeditor
   facebox-rails
-  formtastic (~> 2.1.1)
+  formtastic (= 2.1.1)
   formtastic-bootstrap
   fullstack
   jeweler

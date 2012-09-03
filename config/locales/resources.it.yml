@@ -76,6 +76,8 @@ it:
         attachments: "Allegati"
         texts: "Testi"
         text: "Testo"
+        prices: "Prezzi"
+        price: "Prezzo"
         
 
 

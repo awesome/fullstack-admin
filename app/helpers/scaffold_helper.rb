@@ -36,10 +36,14 @@ module ScaffoldHelper
     def has_timestamps?(model)
       model.columns_hash["created_at"]
     end
-      
+
+    def has_locale?(model)
+      model.columns_hash["locale"]
+    end
+        
     def positionable?(object_or_class)
       model = object_or_class.is_a?(Class) ? object_or_class : object_or_class.class
-      model.columns_hash["position"]
+      model.ancestors.include?(Positionable)
     end
     
     def skip_filter!

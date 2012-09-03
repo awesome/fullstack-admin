@@ -59,3 +59,6 @@ it:
       lecture_room: "Aula"
       speakers: "Relatori"
       event: "Evento"
+      locale: "Lingua"
+      room: "Stanza"
+      brief_description: "Descrizione breve"

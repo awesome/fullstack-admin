@@ -9,6 +9,10 @@
   <% end %>
 <% end %>
 
+<% if has_locale?(current_resource_class) %>
+     <th><%= sort_link :locale %></th>
+<% end %>
+
 <% if has_timestamps?(current_resource_class) %>
     <th><%= sort_link :created_at %></th>
 <% end %>
@@ -24,6 +28,9 @@
   <% end %>
 <% end %>
 
+<% if has_locale?(current_resource_class) %>
+     <td><%= content.locale ? t("locale_names.#{content.locale}", :default => "#{content.locale}".humanize) : "–" %></td>
+<% end %>
 
 <% if has_timestamps?(current_resource_class) %>
     <td><%= l content.created_at.to_date, :format => :long %></td>

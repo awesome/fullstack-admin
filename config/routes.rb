@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
-  
+ 
   namespace :admin do
+    mount Ckeditor::Engine => '/ckeditor'
+    resources :positionables, :only => [:index] do
+      post :sort, :on => :collection
+    end
     
     Fullstack::Admin.resources.each do |r|
       if r.type == :resource

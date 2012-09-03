@@ -15,6 +15,7 @@ it:
       actions: "Azioni"
       add: "Aggiungi"
       cancel: "Annulla"
+      sort: "Ordina"
       save_this_document_before: "Salva il documento prima"      
       are_you_sure: "Sei sicuro?"
       last_updated: "Ultimo aggiornamento"

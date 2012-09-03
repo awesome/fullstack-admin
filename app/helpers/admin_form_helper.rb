@@ -122,15 +122,26 @@ module AdminFormHelper
         elsif is_has_many_association
            association_inputs(sym)
          else
-           input_type = if field && field.options[:markup]
-             :markup
+           opts = {}
+           args = [sym]
+           
+           if field && field.options[:markup]
+             opts[:as] = :markup
+           
            elsif field && field.options[:simple_markup]
-             :simple_markup
+             opts[:as] = :simple_markup
+           
+           elsif column == "locale"
+             opts[:as] = :select
+             opts[:collection] = I18n.available_locales.map {|locale| [I18n.t("locale_names.#{locale}", :default => "#{locale}".humanize), locale.to_s] }
+             
            else
              nil
            end
            
-           @target.input(sym, :as => input_type)
+           args << opts unless opts.empty?
+           
+           @target.input(*args)
 
         end
       end

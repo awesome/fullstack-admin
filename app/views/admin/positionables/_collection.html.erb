@@ -1,0 +1,49 @@
+<%= form_tag(sort_admin_positionables_path, :method => "post") %>
+  <input type="hidden" name="type" value='<%= @positionable_class.name.underscore.pluralize %>'>
+  
+  <table class="table table-bordered table-striped index-table positionable">
+      <thead>
+        <tr>
+          <th style="width:20px">
+            <%= tag :i,  :class => "icon icon-th-list", :"data-toggle" => "tooltip", :title => t('fullstack.admin.drag_to_sort_items', :default => "Drag to sort items") %>
+          </th>
+          <th><%= t("fullstack.admin.resources.#{@positionable_class.name.underscore.pluralize}", :default => @positionable_class.name.humanize) %></th>
+      </tr>
+      </thead>
+
+      <tbody class="sortable">
+        <% @positionables.positionables.each do |positionable| %>
+          <tr>
+            <td>
+              <%= image_tag "drag-handle.png", :class => "handle" %>
+            </td>
+            <td><%= title_for(positionable) %>
+              <input type="hidden" name="positionables[][id]" value='<%= positionable.id %>'>
+              <input type="hidden" name="positionables[][position]" class="positionable-position-input" value='<%= positionable.position || Positionable::MAX_POS %>'>
+            </td>
+          </tr>
+        <% end %>
+      
+      </tbody>
+   
+    </table>
+  
+  
+    <%= button t('fullstack.admin.update', :default => "Update"), :class => "btn-primary" %>
+</form>
+
+
+<% content_for :javascripts do -%>
+  <%= javascript_tag do  %>
+    <%= coffee_script do  %>
+
+      $(document).ready ->
+        $('.positionable .sortable').live 'sortupdate', ->
+          $(@).find('input.positionable-position-input').each (i, e) ->
+            $(@).val(i)
+
+    <% end %>
+  <% end %>
+  
+<% end -%>  
+  

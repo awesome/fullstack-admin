@@ -1,5 +1,7 @@
-<% if content_for? :title -%>
-  <div class="page-header"><h1><%= yield :title %></h1></div>
+<% if content_for?(:title) %>
+  <div class="page-header"><h1><%= yield(:title)  %></h1></div>
+<% elsif @title %>
+  <div class="page-header"><h1><%= @title %></h1></div>
 <% else -%>
   <div class="page-header"><h1><%= t(collection_name, :scope => "fullstack.admin.resources") %></h1></div>
 <% end -%>
@@ -19,7 +21,14 @@
                send("new_admin_#{resource_name}_path"),
                :type => :primary, :icon => :plus, :icon_color => :white %>
 	<% end %>
-
+  
+  <% if subject.can_sort?(collection_name) && positionable?(current_collection.klass) %>
+  <%= button t('fullstack.admin.sort', :default => "Sort"), 
+               send("admin_positionables_path", :type => resource_name)
+               %>
+  
+  <% end %>
+  
   <%= button t('fullstack.admin.delete', :default => "Delete"), 
              'javascript:void(0)', :class => "toggle-delete",
              :icon => :trash %>
@@ -69,9 +78,8 @@
         <% end %>
 
       <% end %>
-      
-        <%= f.buttons do %>
-        <%= f.commit_button t('fullstack.admin.filter', :default => "Filter") %>
+        <%= f.actions do %>
+          <%= f.action t('fullstack.admin.filter', :default => "Filter"), :as => :button %>
         <% end %>
   		<% end %>
   	</div>

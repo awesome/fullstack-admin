@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.41"
+  s.version = "0.1.42"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
-  s.date = "2012-09-03"
+  s.date = "2012-09-04"
   s.description = "Administration interface framework for fullstack"
   s.email = "maurizio.cas@gmail.com"
   s.extra_rdoc_files = [

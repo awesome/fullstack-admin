@@ -985,6 +985,7 @@ Gem::Specification.new do |s|
     "app/views/admin/base/_associated_resources_table.html.erb",
     "app/views/admin/base/_form.html.erb",
     "app/views/admin/base/_index.html.erb",
+    "app/views/admin/base/_nested_belongs_to_fields.html.erb",
     "app/views/admin/base/_nested_form.html.erb",
     "app/views/admin/base/destroy.js.coffee",
     "app/views/admin/base/edit.html.erb",

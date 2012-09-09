@@ -3,11 +3,29 @@ class FileInput < FormtasticBootstrap::Inputs::FileInput
     generic_input_wrapping do
       attachment = object.send(method)
       
+      info_popup = "" 
+      with_geom = attachment.styles.values.select do |decl|
+        decl.geometry
+      end
+        
+      if with_geom.any?
+        infos = "<table class='table table-striped'>"
+        with_geom.each do |s|
+          infos << "<tr><th>#{s.name}</th><td>#{s.geometry}</td></tr>"
+        end
+        infos << "</table>"
+        title = I18n.t('fullstack.admin.info', :default => "Info")
+        content = template.send :h, infos
+        info_popup << "&nbsp; <i class='icon icon-info-sign' title='#{title}' data-content='#{content}' data-toggle='popover'></i>"
+      end
+      
+      
       if !attachment.exists?
         <<-eos
           <span class="file-input-attachment-filename">
             <i class="icon icon-file"></i> (#{I18n.t('fullstack.admin.no_file_uploaded', :default => "No file uploaded")})
           </span> 
+          <span>#{info_popup}</span>
         
           <a class="btn btn-small file-input-choose-file-button" href="javascript:void(0)">
             <i class="icon icon-upload"></i>
@@ -33,11 +51,12 @@ class FileInput < FormtasticBootstrap::Inputs::FileInput
         <<-eos
         
         <span  class="file-input-attachment-filename"><i class="icon icon-file"></i> #{template.send(:html_escape, attachment.url.split("/").last.split("?").first)} </span> 
+        <span>#{info_popup}</span>
+        
         <a class="btn btn-small file-input-choose-file-button" href="javascript:void(0)">
           <i class="icon icon-upload"></i>
           #{I18n.t('fullstack.admin.change', :default => "Change")}
         </a>
-        
         <span class="dropdown">
           <a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">
             <i class="icon icon-eye-open"></i>

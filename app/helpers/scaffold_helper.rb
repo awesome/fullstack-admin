@@ -21,7 +21,8 @@ module ScaffoldHelper
     end
 
     def labelize_attribute_name(method)
-      I18n.t("helpers.label.#{method}", :default => method.to_s.humanize)
+    method ||= "id" 
+         I18n.t("helpers.label.#{method}", :default => method.to_s.humanize)
     end
 
     def sort_link(method)

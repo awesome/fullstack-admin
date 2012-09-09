@@ -78,16 +78,22 @@ module AdminFormHelper
       }.uniq
       
       belongs_to_associations = model.reflect_on_all_associations(:belongs_to).select {|a|
-        !a.options[:polymorphic]
+        !a.options[:polymorphic] && !a.options[:autosave]
       }.map {|assoc| assoc.name.to_s}
-    
+      
       polymorphic_associations = model.reflect_on_all_associations(:belongs_to).select {|a|
-        a.options[:polymorphic]
+        a.options[:polymorphic] && !a.options[:autosave]
       }.map {|assoc| assoc.name.to_s}
+      
+      autosave_belongs_to     = model.reflect_on_all_associations(:belongs_to).select {|a|
+        a.options[:autosave]
+      }.map {|assoc| assoc.name.to_s}.compact
     
       has_many_associations = model.reflect_on_all_associations(:has_many).select {|a| 
         a.options[:autosave]
       }.map {|assoc| assoc.name.to_s}
+      
+      
       
       columns -= polymorphic_associations
       columns += has_many_associations
@@ -115,12 +121,14 @@ module AdminFormHelper
         field = model.schema.hierarchy_fields[sym]
         is_belongs_to_associaiton = belongs_to_associations.include?(column)
         is_has_many_association = has_many_associations.include?(column)
+        is_autosave_belongs_to = autosave_belongs_to.include?(column)
         
         buff << if is_belongs_to_associaiton
           @target.input(sym, :as => :select)
         
-        elsif is_has_many_association
-           association_inputs(sym)
+        elsif is_has_many_association || is_autosave_belongs_to
+           association_inputs(sym)       
+
          else
            opts = {}
            args = [sym]
@@ -169,8 +177,31 @@ module AdminFormHelper
     end
 
     def association_inputs(association)
-       @target.template.render :partial => "associated_resources_table", :locals => { 
-        :association => association, :f => self } 
+      assoc_str = association.to_s
+      is_singular = assoc_str.pluralize != assoc_str and assoc_str.singularize == assoc_str
+      
+      if is_singular
+        if @target.template.partial?("nested_belongs_to_#{assoc_str}_fields")
+          @target.template.render :partial => "nested_belongs_to_#{assoc_str}_fields", :locals => { 
+           :association => association, :f => self }         
+        else
+          @target.template.render :partial => "nested_belongs_to_fields", :locals => { 
+           :association => association, :f => self }         
+        end
+
+      else
+        
+        if @target.template.partial?("associated_#{assoc_str}_table")
+          @target.template.render :partial => "associated_#{assoc_str}_table", :locals => { 
+           :association => association, :f => self }
+        else
+          @target.template.render :partial => "associated_resources_table", :locals => { 
+           :association => association, :f => self }         
+        end
+  
+        
+      end
+
     end
 
   end # ~

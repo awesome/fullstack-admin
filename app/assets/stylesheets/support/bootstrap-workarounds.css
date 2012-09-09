@@ -37,3 +37,7 @@ overflow: visible;
 .tabs-left .nav-list.nav-tabs {
   padding-right: 0;
 }
+
+.popover {
+  z-index: 18000;
+}

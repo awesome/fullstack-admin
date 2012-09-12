@@ -6,7 +6,7 @@ $(document).ready ->
       return 0
     
     file_input = self.find("~ input[type='file']")
-    file_name_span = self.closest(".input").find(".file-input-attachment-filename")
+    file_name_span = self.closest(".controls").find(".file-input-attachment-filename")
      
     file_input.change ->
       file_input_val = file_input.val()
@@ -18,7 +18,7 @@ $(document).ready ->
   $(".file-input-delete-attachment-button").live "click", ->
     
     btn = $(@)
-    input_container = btn.closest(".input")
+    input_container = btn.closest(".controls")
     
     if btn.hasClass("active")
       input_container.find(".btn:not(.file-input-delete-attachment-button)").addClass("disabled")

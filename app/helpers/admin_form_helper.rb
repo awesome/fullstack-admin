@@ -138,6 +138,10 @@ module AdminFormHelper
            
            elsif field && field.options[:simple_markup]
              opts[:as] = :simple_markup
+
+           elsif field && field.options[:in]
+             opts[:as] = :select
+             opts[:collection] = field.options[:in]
            
            elsif column == "locale"
              opts[:as] = :select

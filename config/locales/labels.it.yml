@@ -62,3 +62,4 @@ it:
       locale: "Lingua"
       room: "Stanza"
       brief_description: "Descrizione breve"
+      category: "Categoria"

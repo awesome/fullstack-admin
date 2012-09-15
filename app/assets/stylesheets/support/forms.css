@@ -161,9 +161,15 @@ select,
 	padding: 4px 0.5%;
 }
 
-.datetime > .input > select, .time > .input > select, .date > .input > select {
+.datetime > .input > select, .time > .input > select, .date > .input > select, .datetime_select > .input > select {
 	width: auto;
 }
+
+
+.datetime-selector {
+  width: auto;
+}
+
 
 .input {
   margin-bottom: 18px;

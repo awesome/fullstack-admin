@@ -960,6 +960,7 @@ Gem::Specification.new do |s|
     "app/inputs/country_input.rb",
     "app/inputs/daterange_input.rb",
     "app/inputs/datetime_input.rb",
+    "app/inputs/datetime_select_input.rb",
     "app/inputs/file_input.rb",
     "app/inputs/iso3166.rb",
     "app/inputs/markup_input.rb",

@@ -23,6 +23,7 @@ module Fullstack
       def assets
         append_to_file "config/assets.yml" do
 <<-eos
+
 - admin/admin.css
 - admin/admin.js          
 eos

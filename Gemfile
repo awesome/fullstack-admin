@@ -5,7 +5,7 @@
 source "http://rubygems.org"
 
 gem 'rails', "~> 3.2"
-gem "fullstack", '~> 0.1.25'
+gem "fullstack", '~> 0.1.26'
 gem "bootstrap-wysihtml5-rails"
 gem "bootstrap-helpers"
 gem "chosen-rails"

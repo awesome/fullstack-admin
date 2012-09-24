@@ -14,6 +14,8 @@ gem "facebox-rails"
 gem "formtastic-bootstrap", :git => "git://github.com/kristianmandrup/formtastic-bootstrap.git"
 gem "meta_search"
 gem "plupload-rails"
+gem "has-attached", '~> 0.2.4'
+
 gem 'bootstrap-datepicker-rails'
 
 

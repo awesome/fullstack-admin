@@ -28,12 +28,10 @@ require "facebox-rails"
 require "formtastic"
 require "formtastic-bootstrap"
 require "kaminari"
-require "less-rails-bootstrap"
 require "meta_search"
 require "plupload-rails"
 require "fullstack"
 require "bootstrap-datepicker-rails"
-require "select2-rails"
 require "fullstack"
 
 require 'fullstack/admin/engine'

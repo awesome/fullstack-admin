@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.48"
+  s.version = "0.1.49"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
@@ -941,12 +941,8 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/admin/base.css",
     "app/assets/stylesheets/support/ajax_loading.css",
     "app/assets/stylesheets/support/base.css",
-    "app/assets/stylesheets/support/bootstrap-customizable-responsive.less",
-    "app/assets/stylesheets/support/bootstrap-customizable.less",
-    "app/assets/stylesheets/support/bootstrap-responsive.css",
     "app/assets/stylesheets/support/bootstrap-workarounds.css",
     "app/assets/stylesheets/support/bootstrap.css",
-    "app/assets/stylesheets/support/elements.less",
     "app/assets/stylesheets/support/facebox.css",
     "app/assets/stylesheets/support/forms.css",
     "app/assets/stylesheets/support/plupload.css",
@@ -1081,11 +1077,9 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<ckeditor>, [">= 0"])
       s.add_runtime_dependency(%q<facebox-rails>, [">= 0"])
       s.add_runtime_dependency(%q<formtastic-bootstrap>, [">= 0"])
-      s.add_runtime_dependency(%q<less-rails-bootstrap>, [">= 0"])
       s.add_runtime_dependency(%q<meta_search>, [">= 0"])
       s.add_runtime_dependency(%q<plupload-rails>, [">= 0"])
       s.add_runtime_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
-      s.add_runtime_dependency(%q<select2-rails>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["~> 3.2"])
@@ -1096,11 +1090,9 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<ckeditor>, [">= 0"])
       s.add_dependency(%q<facebox-rails>, [">= 0"])
       s.add_dependency(%q<formtastic-bootstrap>, [">= 0"])
-      s.add_dependency(%q<less-rails-bootstrap>, [">= 0"])
       s.add_dependency(%q<meta_search>, [">= 0"])
       s.add_dependency(%q<plupload-rails>, [">= 0"])
       s.add_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
-      s.add_dependency(%q<select2-rails>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
@@ -1112,11 +1104,9 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<ckeditor>, [">= 0"])
     s.add_dependency(%q<facebox-rails>, [">= 0"])
     s.add_dependency(%q<formtastic-bootstrap>, [">= 0"])
-    s.add_dependency(%q<less-rails-bootstrap>, [">= 0"])
     s.add_dependency(%q<meta_search>, [">= 0"])
     s.add_dependency(%q<plupload-rails>, [">= 0"])
     s.add_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
-    s.add_dependency(%q<select2-rails>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end

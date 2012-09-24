@@ -12,11 +12,10 @@ gem "chosen-rails"
 gem "ckeditor", :git => "git://github.com/paranoida/ckeditor.git"
 gem "facebox-rails"
 gem "formtastic-bootstrap", :git => "git://github.com/kristianmandrup/formtastic-bootstrap.git"
-gem "less-rails-bootstrap"
 gem "meta_search"
 gem "plupload-rails"
 gem 'bootstrap-datepicker-rails'
-gem "select2-rails"
+
 
 group :development do
   gem "jeweler"

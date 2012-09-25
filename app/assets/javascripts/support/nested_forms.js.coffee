@@ -31,6 +31,7 @@ $(document).ready ->
     associated_resources_index.append(template_instance)
     autoupdate_labels(associated_resources_index.find('.associated-resource:last'))
     update_positions associated_resources_index
+    associated_resources_index.find('.associated-resource:last').find(".btn[data-toggle='modal']").click()
   
   autoupdate_labels($('.associated-resource'))
   

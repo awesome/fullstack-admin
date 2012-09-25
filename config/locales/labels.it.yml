@@ -63,3 +63,6 @@ it:
       room: "Stanza"
       brief_description: "Descrizione breve"
       category: "Categoria"
+      post_code: "Codice postale"
+      kind: "Tipo"
+      state: "Provincia"

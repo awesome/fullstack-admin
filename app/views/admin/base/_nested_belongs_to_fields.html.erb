@@ -1,7 +1,7 @@
 <%= f.inputs t(association, :scope => 'fullstack.admin.resources', :default => association.to_s.humanize), :class => "associated-resource" do %>
 
 <%= f.admin_fields_for( association ) do |f| %>
-  <%= f.resource_inputs %>
+<%= f.resource_inputs :except => [resource_name] %>
 <% end %>
 
 <% end %>

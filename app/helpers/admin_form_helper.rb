@@ -179,33 +179,40 @@ module AdminFormHelper
         yield(FormBuilderDecorator.new(f))
       end
     end
+    
+    def sort_association(association, options = {})
+       assoc_str = association.to_s
+       @target.template.render :partial => "sort", :locals => { 
+        :association => association, :f => self, :options => options }
+       
+    end
 
-    def association_inputs(association)
+    def association_inputs(association, options = {})
+      
       assoc_str = association.to_s
       is_singular = assoc_str.pluralize != assoc_str and assoc_str.singularize == assoc_str
       
       if is_singular
         if @target.template.partial?("nested_belongs_to_#{assoc_str}_fields")
           @target.template.render :partial => "nested_belongs_to_#{assoc_str}_fields", :locals => { 
-           :association => association, :f => self }         
+           :association => association, :f => self, :options => options }
         else
           @target.template.render :partial => "nested_belongs_to_fields", :locals => { 
-           :association => association, :f => self }         
+           :association => association, :f => self, :options => options }
         end
 
       else
         
         if @target.template.partial?("associated_#{assoc_str}_table")
           @target.template.render :partial => "associated_#{assoc_str}_table", :locals => { 
-           :association => association, :f => self }
+           :association => association, :f => self, :options => options }
         else
           @target.template.render :partial => "associated_resources_table", :locals => { 
-           :association => association, :f => self }         
+           :association => association, :f => self, :options => options }         
         end
-  
-        
-      end
 
+      end
+ 
     end
 
   end # ~

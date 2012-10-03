@@ -2,6 +2,18 @@
 = Fullstack Admin Roadmap =
 ===========================
 
+- Fix positionable/_collection.html.erb not working
+
+- Has many nested:
+  has_many_nested = has_many + accepts_nested_attributes_for + :allow_destroy => true [CORE]
+  
+- Fix problem that prevent link to be inserted in sequence [CMS]
+- Remove Jquery datepiker and UI [ADMIN]
+
+- Add shorthands scopes for ordering: desc, asc [CORE]
+
+- Better navigation interface/ More similar to wordpress
+
 ✓ fix delete not removing rows/thumbnails on success
 
 ✓ Better rendering for boolean input

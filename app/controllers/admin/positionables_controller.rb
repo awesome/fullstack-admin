@@ -27,7 +27,7 @@ class Admin::PositionablesController < Admin::BaseController
     
     raise "NotFound" unless @positionable_class && @positionable_class.columns_hash["position"]
     
-    @positionables = ::Admin::Positionable.new(@positionable_class.order("position"))
+    @positionables = ::Admin::Positionable.new(@positionable_class.unscoped.order("position"))
     @skip_filter = true
     @title = t('fullstack.admin.sort', :default => "Sort") + " - " + t("fullstack.admin.resources.#{@positionable_class.name.underscore.pluralize}", :default => @positionable_class.name.humanize)
   end

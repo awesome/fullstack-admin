@@ -57,7 +57,7 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-datepicker-rails (0.6.16)
       railties (>= 3.0)
-    bootstrap-helpers (0.1.1)
+    bootstrap-helpers (0.1.8)
       rails
     bootstrap-wysihtml5-rails (0.3.0)
       railties (>= 3.0)
@@ -245,7 +245,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
-  bootstrap-helpers
+  bootstrap-helpers (~> 0.1.7)
   bootstrap-wysihtml5-rails
   chosen-rails
   ckeditor!

@@ -1,5 +1,7 @@
 <% association_class = f.object.class.reflect_on_association(association).klass %>
 <% resource_name = f.object.class.name.demodulize.underscore %>
+
+
 <%= f.inputs t(association, :scope => 'fullstack.admin.resources', :default => association.to_s.humanize), :class => "associated-resources" do %>
 
 <table class="table table-bordered table-striped index-table <%= 'positionable' if positionable?(association_class) %>" >
@@ -14,7 +16,7 @@
       
       <% i = 0 %>
       <%= f.admin_fields_for association do |f| %>
-      <%= render :partial => "nested_form", :locals => {:index => i, :f => f, :resource_name => resource_name, :association => association} %>
+      <%= render :partial => "nested_form", :locals => { :index => i, :f => f, :resource_name => resource_name, :association => association } %>
         <% i += 1 %>
       <% end %>    
       

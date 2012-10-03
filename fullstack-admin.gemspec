@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.52"
+  s.version = "0.1.53"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
-  s.date = "2012-09-25"
+  s.date = "2012-10-03"
   s.description = "Administration interface framework for fullstack"
   s.email = "maurizio.cas@gmail.com"
   s.extra_rdoc_files = [
@@ -1077,7 +1077,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rails>, ["~> 3.2"])
       s.add_runtime_dependency(%q<fullstack>, ["~> 0.1.26"])
       s.add_runtime_dependency(%q<bootstrap-wysihtml5-rails>, [">= 0"])
-      s.add_runtime_dependency(%q<bootstrap-helpers>, [">= 0"])
+      s.add_runtime_dependency(%q<bootstrap-helpers>, ["~> 0.1.7"])
       s.add_runtime_dependency(%q<chosen-rails>, [">= 0"])
       s.add_runtime_dependency(%q<ckeditor>, [">= 0"])
       s.add_runtime_dependency(%q<facebox-rails>, [">= 0"])
@@ -1091,7 +1091,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rails>, ["~> 3.2"])
       s.add_dependency(%q<fullstack>, ["~> 0.1.26"])
       s.add_dependency(%q<bootstrap-wysihtml5-rails>, [">= 0"])
-      s.add_dependency(%q<bootstrap-helpers>, [">= 0"])
+      s.add_dependency(%q<bootstrap-helpers>, ["~> 0.1.7"])
       s.add_dependency(%q<chosen-rails>, [">= 0"])
       s.add_dependency(%q<ckeditor>, [">= 0"])
       s.add_dependency(%q<facebox-rails>, [">= 0"])
@@ -1106,7 +1106,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rails>, ["~> 3.2"])
     s.add_dependency(%q<fullstack>, ["~> 0.1.26"])
     s.add_dependency(%q<bootstrap-wysihtml5-rails>, [">= 0"])
-    s.add_dependency(%q<bootstrap-helpers>, [">= 0"])
+    s.add_dependency(%q<bootstrap-helpers>, ["~> 0.1.7"])
     s.add_dependency(%q<chosen-rails>, [">= 0"])
     s.add_dependency(%q<ckeditor>, [">= 0"])
     s.add_dependency(%q<facebox-rails>, [">= 0"])

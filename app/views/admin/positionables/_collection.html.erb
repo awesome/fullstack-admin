@@ -36,11 +36,14 @@
 <% content_for :javascripts do -%>
   <%= javascript_tag do  %>
     <%= coffee_script do  %>
-
+      console.log("fasasf")
       $(document).ready ->
         $('.positionable .sortable').live 'sortupdate', ->
+          console.log('ok')
           $(@).find('input.positionable-position-input').each (i, e) ->
+            console.log('pos' + i)
             $(@).val(i)
+            
 
     <% end %>
   <% end %>

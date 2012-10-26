@@ -6,7 +6,6 @@ source "http://rubygems.org"
 
 gem 'rails', "~> 3.2"
 gem "fullstack", '~> 0.1.26'
-gem "bootstrap-wysihtml5-rails"
 gem "bootstrap-helpers", '~> 0.1.7'
 gem "chosen-rails"
 gem "ckeditor", :git => "git://github.com/paranoida/ckeditor.git"

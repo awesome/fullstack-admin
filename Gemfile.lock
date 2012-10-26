@@ -59,8 +59,6 @@ GEM
       railties (>= 3.0)
     bootstrap-helpers (0.1.8)
       rails
-    bootstrap-wysihtml5-rails (0.3.0)
-      railties (>= 3.0)
     builder (3.0.0)
     checkin (0.5.1)
     chosen-rails (0.9.8.1)
@@ -246,7 +244,6 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-helpers (~> 0.1.7)
-  bootstrap-wysihtml5-rails
   chosen-rails
   ckeditor!
   facebox-rails

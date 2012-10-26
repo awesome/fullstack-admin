@@ -4,6 +4,14 @@
 #= require notify
 #= require jquery.sticky
 
+  
+fixHelper = (e, ui) ->
+  ui.children().each ->
+    self = $ @
+    self.width self.width()
+  ui
+
+
 $(document).ready ->
   $(".btn.toggle-delete").on "click", (e) ->
     button = $(this)
@@ -15,12 +23,16 @@ $(document).ready ->
       links.show "fast"
       button.addClass "showing"
 
-fixHelper = (e, ui) ->
-  ui.children().each ->
-    self = $ @
-    self.width self.width()
-  ui
-  
-$("tbody.sortable").sortable({ axis: 'y', items: 'tr', helper: fixHelper,  handle: '.handle'  })
+  $("tbody.sortable").sortable({ axis: 'y', items: 'tr', helper: fixHelper,  handle: '.handle'  })
+  $("ul.sortable").sortable({ items: 'li', helper: fixHelper  })
 
+  $("a[rel=facebox]").facebox()
+  $("[data-tip]").tooltip({
+      title: ->
+        $(@).data('tip')
+  })
+  
+  
+
+  
     

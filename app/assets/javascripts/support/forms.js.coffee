@@ -3,7 +3,6 @@
 #= require jquery.tagsinput
 #= require prevent_submit_on_enter
 #= require slider_input
-#= require bootstrap-wysihtml5-all
 #= require support/pickers
 #= require chosen-jquery
 #= require ajax-chosen

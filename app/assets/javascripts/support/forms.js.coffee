@@ -52,14 +52,6 @@ $(document).ready ->
 
   $('input.slider').sliderInput()
 
-  $("textarea.markup").wysihtml5
-    'font-styles' : false
-    emphasis: true
-    lists: false
-    html: false
-    link: false
-    image: false
-
   $(".on-focus-help").each ->
     self = $(this)
     input = self.parent().find("input")

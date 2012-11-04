@@ -8,7 +8,7 @@ class Admin::BaseController < ApplicationController
 
   def rescue_access_denied
     if subject.guest?
-      redirect_to new_user_session_path
+      redirect_to new_admin_session_path
     else
       render :text => "Not Authorized", :status => 403
     end

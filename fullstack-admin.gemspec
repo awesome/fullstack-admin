@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.1.56"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
-  s.date = "2012-10-27"
+  s.date = "2012-11-04"
   s.description = "Administration interface framework for fullstack"
   s.email = "maurizio.cas@gmail.com"
   s.extra_rdoc_files = [
@@ -1086,6 +1086,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<plupload-rails>, [">= 0"])
       s.add_runtime_dependency(%q<has-attached>, ["~> 0.2.4"])
       s.add_runtime_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
+      s.add_runtime_dependency(%q<sorcery>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["~> 3.2"])
@@ -1099,6 +1100,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<plupload-rails>, [">= 0"])
       s.add_dependency(%q<has-attached>, ["~> 0.2.4"])
       s.add_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
+      s.add_dependency(%q<sorcery>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
@@ -1113,6 +1115,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<plupload-rails>, [">= 0"])
     s.add_dependency(%q<has-attached>, ["~> 0.2.4"])
     s.add_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
+    s.add_dependency(%q<sorcery>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end

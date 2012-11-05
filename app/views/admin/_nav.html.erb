@@ -1,13 +1,15 @@
-<% content_for :menu do -%>
-  
-  <%= nav do %>
-  <%= nav_item t('fullstack.admin.dashboard', :default => "Dashboard"), admin_root_path, :icon => "cog"  %>
-  <% end %>
-  
+<% content_for :menu do -%>  
+
   <%= nav(:class => 'float right') do %>
-  <%= nav_item t('fullstack.admin.homepage', :default => "Homepage"), "/", :icon => "home" %>
-    <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :icon => "user" do %>
-        <%= nav_item t('fullstack.admin.logout', :default => "Logout"), destroy_user_session_path, :method => :delete %>
+  <li class="divider-vertical">
+  </li>
+  
+  <%= nav_item t('fullstack.admin.homepage', :default => "Homepage"), "/", :icon => "globe", :"icon_color" => :white %>
+  <li class="divider-vertical">
+  </li>
+  
+    <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :icon => "user", :"icon_color" => :white do %>
+        <%= nav_item t('fullstack.admin.logout', :default => "Logout"), admin_sessions_path, :method => :delete %>
     <% end %>
   <% end %>
   
@@ -15,19 +17,34 @@
 
 <% content_for :nav do -%>
 
-  <div class="tabbable tabs-left float right">
-    <%= nav_list :class => "nav-tabs" do %>
 
-    <% Fullstack::Admin.resources.each do |rog| %>
-        <% if rog.type == :group %> 
-        <%= nav_header t("fullstack.admin.groups.#{rog.name}", :default => rog.name.to_s.humanize) %>
-          
-        <% elsif rog.type == :resource %>
-          <%= nav_item t("fullstack.admin.resources.#{rog.name}", :default => rog.name.to_s.humanize), [:admin, rog.name] %>
-        <% end %>
-    <% end %>
+<div class="sidebar">
+	<div class="sidebar-inner">
+		<div class="accordion sidebar-accordion" id="sidebar-accordion">						
+      <% i = 0 %>
+      <% Fullstack::Admin.grouped_resources.each do |group, resources| %>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a href="#sidebar_group_collapsable_<%= i+=1 %>" data-parent="#sidebar-accordion" data-toggle="collapse" class="accordion-toggle">
+						<i class="icon-<%= group.icon %>"></i> <%= t("fullstack.admin.groups.#{group.name}", :default =>  group.name.to_s.humanize) %>
+					  <% if resources.map(&:name).include?(plural_name) %>
+            <i class="icon-chevron-left float right" style="opacity: 0.4;"></i>
+            <% end %>
+          </a>
+				</div>
+				<div class="accordion-body collapse <%= resources.map(&:name).include?(plural_name) ? 'in' : '' %>" id="sidebar_group_collapsable_<%= i %>">
+					<div class="accordion-inner">
+						<ul class="nav nav-list">
+              <% resources.each do |resource| %>
+               <%= nav_item t("fullstack.admin.resources.#{resource.name}", :default => resource.name.to_s.humanize), [:admin, resource.name] %> 
+              <% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+      <% end %>
+		</div>
+	</div>
+</div>
 
-    <% end %>
-  </div>
-
-<% end -%>
+<% end %>

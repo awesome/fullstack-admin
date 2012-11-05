@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   
   namespace :admin do
+    resources :sessions, :only => [:new, :create] do
+      match :destroy, :via => :delete, :on => :collection
+    end
+    
     resources :positionables, :only => [:index] do
       post :sort, :on => :collection
     end

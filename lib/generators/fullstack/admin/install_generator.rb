@@ -33,12 +33,13 @@ eos
       
 
       def users
+        generate "sorcery:install remember_me activity_logging brute_force_protection --model Superuser"
         generate "migration:from user"
         append_to_file "db/seeds.rb" do
 <<-eos
 
 if Rails.env.development?
-  user = User.new( :email => "admin@example.com",
+  user = Superuser.new( :email => "admin@example.com",
                     :password => "password" )
                   
   user.skip_confirmation! if user.respond_to?(:skip_confirmation!)             
@@ -64,7 +65,7 @@ eos
 eos
         route(src)
         
-        route("\n  devise_for :users\n")
+        #route("\n  devise_for :users\n")
       end
 
       protected

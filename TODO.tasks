@@ -2,7 +2,8 @@
 = Fullstack Admin Roadmap =
 ===========================
 
-- Fix positionable/_collection.html.erb not working
+- Fix assets compilation issues (and lock assets-related gems to working versions only)
+✓ Fix positionable/_collection.html.erb not working
 
 - Has many nested:
   has_many_nested = has_many + accepts_nested_attributes_for + :allow_destroy => true [CORE]
@@ -33,17 +34,17 @@
 
 ✓ Ckeditor: upload assets to S3 according to app.config 
 
-- Localizable models
-    - Create Localized module: a model is localizable if has a :locale field (cms?)
-    - Add a scope to Localized to find models within the current locale (cms?)
+✓ Localizable models
+    ✓ Create Localized module: a model is localizable if has a :locale field (cms?)
+    ✓ Add a scope to Localized to find models within the current locale (cms?)
     
-    - Create an option to specify the admin_locale
-    - add a before filter to Admin::BaseController that uses the default locale for the admin
-    - Split localized models index into tabs (either through ajax?)
-    - Let the programmer decide a default locale and a set of available locales
-    - Translations for locale codes
+    ✓ Create an option to specify the admin_locale
+    ✓ add a before filter to Admin::BaseController that uses the default locale for the admin
+    ✓ Split localized models index into tabs (either through ajax?)
+    ✓ Let the programmer decide a default locale and a set of available locales
+    ✓ Translations for locale codes
     
-- Form for accepts_nested_attributes_for and has_one 
+- Form for accepts_nested_attributes_for and has_one (NOT TESTED?)
 - Optional tracking of author/updaters for every model (CMS?)
 
 ==================
@@ -55,9 +56,9 @@
   - find alternative to sortable
   
 - Multiple scopes
-- Tags input with chosen
+- Tags input with select2
 
-- Alternated fields:
+- Conditional fields and Virtual Fields:
   = Group of fields that can be setted exclusively
   = eg
   = field :age
@@ -65,5 +66,10 @@
 
   = virtual_field :link_method, :in => %W(page external)
 
-  = belongs_to :related_page, :meaningful_if => :link_method.eq("page") 
-  = field :url,               :meaningful_if => :link_method.eq("external")
+  = belongs_to :related_page, :meaningful_when => :link_method.eq("page") 
+  = field :url,               :meaningful_when => :link_method.eq("external")
+
+- Validation DSL
+  = field :name,  :string,   :required
+  = field :email, :required, :unique
+  

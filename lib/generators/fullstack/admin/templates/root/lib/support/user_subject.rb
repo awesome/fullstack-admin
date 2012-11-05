@@ -13,7 +13,7 @@ class UserSubject < Checkin::Subject
       end
       
       role :administrator, :require => :logged_in, :alias => :admin do
-          subject_model.has_role?(:administrator)
+          subject_model && subject_model.is_a?(Superuser)
       end
 
       #

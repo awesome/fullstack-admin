@@ -1,10 +1,43 @@
+<div class="page-header">
+  <% unless partial?('collection')%>
+  <div class="mb1 index-actions">
+  	<% if subject.can_create?(collection_name) && controller.action_methods.include?("new") %>
+      <%= button t('fullstack.admin.new', :default => "New"), 
+                 send("new_admin_#{resource_name}_path"),
+                 :type => :primary, :icon => :plus, :icon_color => :white %>
+  	<% end %>
+  
+    <% if subject.can_sort?(collection_name) && positionable?(current_collection.klass) %>
+    <%= button t('fullstack.admin.sort', :default => "Sort"), 
+                 send("admin_positionables_path", :type => resource_name)
+                 %>
+  
+    <% end %>
+  
+    <%= button t('fullstack.admin.delete', :default => "Delete"), 
+               'javascript:void(0)', :class => "toggle-delete",
+               :icon => :trash %>
+  </div>
+  
+  <% end %>
+
+<h1>
 <% if content_for?(:title) %>
-  <div class="page-header"><h1><%= yield(:title)  %></h1></div>
+  <%= yield(:title)  %>
+
 <% elsif @title %>
-  <div class="page-header"><h1><%= @title %></h1></div>
+
+  <%= @title %>
+
 <% else -%>
-  <div class="page-header"><h1><%= t(collection_name, :scope => "fullstack.admin.resources") %></h1></div>
+  
+  <%= t(collection_name, :scope => "fullstack.admin.resources") %>
+
 <% end -%>
+</h1>
+
+
+</div>
 
 <% if partial?('collection') %>
   <%= render :partial => "collection", 
@@ -15,24 +48,7 @@
   %>
 <% else %>
 
-<div class="mb1">
-	<% if subject.can_create?(collection_name) && controller.action_methods.include?("new") %>
-    <%= button t('fullstack.admin.new', :default => "New"), 
-               send("new_admin_#{resource_name}_path"),
-               :type => :primary, :icon => :plus, :icon_color => :white %>
-	<% end %>
-  
-  <% if subject.can_sort?(collection_name) && positionable?(current_collection.klass) %>
-  <%= button t('fullstack.admin.sort', :default => "Sort"), 
-               send("admin_positionables_path", :type => resource_name)
-               %>
-  
-  <% end %>
-  
-  <%= button t('fullstack.admin.delete', :default => "Delete"), 
-             'javascript:void(0)', :class => "toggle-delete",
-             :icon => :trash %>
-</div>
+
 
 
 <table class="table table-bordered table-striped index-table">
@@ -56,16 +72,18 @@
 <% content_for :aside do -%>
 
 <% if (!@skip_filter) && (partial?('filter') || title_column(current_resource_class) || has_timestamps?(current_resource_class)) %>
-  	<div class="well">
-      <div class="mb1">
-        <h4><%= t('fullstack.admin.filter', :default => "Filter") %></h4>
+  	<div class="box">
+      <div class="box-header">
+        <%= t('fullstack.admin.filter', :default => "Filter") %>
       </div>
+        
   		<%= admin_form_for @search, :url => self.send("admin_#{collection_name}_path") , :html => {:method => :get} do |f| %>
+      <div class="box-content">
 
       <% if partial?('filter') %>
         <%= render :partial => "filter", :locals => {:f => f} %>
       <% else %>
-        <%= f.inputs do %>
+        <%= f.inputs :class => "filter-inputs"  do %>
 
         <% if tc = title_column(current_resource_class) %>
             <%=  f.input :"#{tc}_contains" %>
@@ -78,9 +96,10 @@
         <% end %>
 
       <% end %>
-        <%= f.actions do %>
-          <%= f.action t('fullstack.admin.filter', :default => "Filter"), :as => :button %>
-        <% end %>
+      </div>
+      <div class="box-footer align-right">
+        <%= f.action t('fullstack.admin.filter', :default => "Filter"), :as => :button %>
+      </div>
   		<% end %>
   	</div>
   <% end %>

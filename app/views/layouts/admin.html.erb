@@ -12,25 +12,23 @@
   <%= render :partial => 'admin/nav' %>
 
   <%= navbar :fluid => true, :fixed => :top do %>
-    <%= brand "#{app_name} Admin", admin_root_path %>
+  <a class="brand" href="/admin">
+    <i class="icon-home icon-white"></i> <%= "#{app_name} Admin" %></a>
     <%= yield :menu %>
   <% end %>
 
   <%= yield :crumbs %>
+  <%= yield :nav %>
   
   <%= container :fluid => true, :class => "main" do %>
-    <%= row do %>
+     <%= row do %>
       
-      <%= span(2, :id => "left-aside") do %>
-          <%= yield :nav %>
-      <% end %>
-      
-      <%= span(content_for?(:aside) ? 6 : 10, :id => "center") do %>
+      <%= span(content_for?(:aside) ? 9 : 12, :id => "center") do %>
           <%= yield %>
       <% end %>
       
       <% if content_for?(:aside) %>
-        <%= span(4, :id => "left-aside") do %>
+      <%= span(3, :id => "right-aside") do %>
             <%= yield :aside %>
         <% end %>
       <% end %>

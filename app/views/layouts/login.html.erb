@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <%= csrf_meta_tags %>
+  <title><%= ( @title ? "#{@title} - " : "" ) + "#{app_name} Admin" %></title>
+
+  <%= stylesheet_link_tag 'admin/admin' %>
+  <%= yield :stylesheets %>
+</head>
+
+<body>
+    <%= yield %>
+</body>
+</html>
+

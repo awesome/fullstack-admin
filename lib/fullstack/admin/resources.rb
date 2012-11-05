@@ -61,7 +61,7 @@ module Fullstack
     
     # Group
     class Group < Entity      
-      attr_accessor :children, :name
+      attr_accessor :children, :name, :icon
       
       def initialize(name)
         @name = "#{name}"
@@ -128,6 +128,27 @@ module Fullstack
     end
     
     module_function :resources
+  
+    def grouped_resources
+      if !@resource_groups
+        @resource_groups = {}
+        current_group = nil
+      
+        resources.each do |rog|
+          if rog.type == :group
+            @resource_groups[rog] = []
+            current_group = rog
+          elsif current_group
+            @resource_groups[current_group] << rog
+          end
+        end
+      end
+      @resource_groups
+    end
+    
+    module_function :grouped_resources
+  
+  
   end
 end
 

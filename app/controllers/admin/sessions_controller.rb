@@ -1,19 +1,27 @@
 class Admin::SessionsController < ApplicationController
-  layout 'admin'
+  layout 'login'
+  
+  def new
+    @user = Superuser.new
+  end
   
   def create
-    user = login(params[:email], params[:password], params[:remember_me])
-    if user
-      redirect_back_or_to root_url, :notice => "Logged in!"
-    else
-      flash.now.alert = "Email or password was invalid"
-      render :new
+    respond_to do |format|
+      if @user = login(params[:username],params[:password])
+        format.html { redirect_back_or_to("/", :notice => I18n.t("signed_in", :scope => "fullstack.admin", :default  => 'Signed in successfully.')) }
+        format.xml { render :xml => @user, :status => :created, :location => @user }
+      else
+        format.html { flash.now[:alert] = I18n.t("login_failed", :scope => "fullstack.admin", :default  => 'Login failed.'); render :action => "new" }
+        format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
     end
   end
-
+    
   def destroy
     logout
-    redirect_to root_url, :notice => "Logged out!"
+    redirect_to("/", :notice => I18n.t("signed_out", :scope => "fullstack.admin", :default  => 'Signed out successfully.'))
   end
 
 end
+
+

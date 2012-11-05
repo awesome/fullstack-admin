@@ -66,3 +66,4 @@ it:
       post_code: "Codice postale"
       kind: "Tipo"
       state: "Provincia"
+      password_confirmation: "Conferma Password"

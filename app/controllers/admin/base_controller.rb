@@ -1,17 +1,13 @@
 class Admin::BaseController < ApplicationController
-  rescue_from Checkin::AccessDenied, :with => :rescue_access_denied
-
+  before_filter :require_login
+  before_filter :fetch_current_resource
+  
   layout 'admin'
-  authorize(:scope => :admin)
 
   protected
 
-  def rescue_access_denied
-    if subject.guest?
-      redirect_to new_admin_session_path
-    else
-      render :text => "Not Authorized", :status => 403
-    end
+  def not_authenticated
+    redirect_to new_admin_session_url, :alert => "First login to access this page."
   end
   
   class << self
@@ -27,19 +23,24 @@ class Admin::BaseController < ApplicationController
                 :current_resource_class,
                 :current_resource, 
                 :current_collection,
-                :title_column
+                :title_column,
+                :subject
 
+
+  def subject
+    @subject ||= ::Admin::SubjectModelAdapter.new(current_user)
+  end
 
   def current_resource_class
-    @current_resource_class ||= controller_name.singularize.camelize.constantize
+    @current_resource_class ||= controller_name.singularize.camelize.constantize rescue nil
   end
   
   def resource_name
-    current_resource_class.name.demodulize.underscore
+    current_resource_class && current_resource_class.name.demodulize.underscore
   end
   
   def collection_name
-    resource_name.pluralize
+    resource_name.try(:pluralize)
   end
 
   alias :singular_name :resource_name
@@ -59,5 +60,9 @@ class Admin::BaseController < ApplicationController
     @_title_columns[model] ||= ( model.column_names.map{ |c| c.to_s } & %W(title name label browser_title seo_title seo_name key claim email) ).first
   end
   
+  def fetch_current_resource
+    return if !params[:id] || current_resource 
+    instance_variable_set("@#{resource_name}", current_resource_class.find(params[:id]))
+  end
   
 end

@@ -30,6 +30,10 @@ it:
       choose_a_file: "Carica"
       change: "Cambia"
       preview: "Anteprima"
+      signed_in: 'Login effettuato con successo.'
+      signed_out: 'Logout effettuato con successo.'
+      login_failed: 'Nome utente o password non validi.'
+      
       
       form:
         correct_these_errors_and_retry: "Correggi questi errori e riprova"

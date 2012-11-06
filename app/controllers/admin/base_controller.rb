@@ -1,15 +1,9 @@
 class Admin::BaseController < ApplicationController
-  before_filter :require_login
+  before_filter :authenticate_administrator!
   before_filter :fetch_current_resource
   
   layout 'admin'
-
-  protected
-
-  def not_authenticated
-    redirect_to new_admin_session_url, :alert => "First login to access this page."
-  end
-  
+    
   class << self
     def responder
     ::Admin::Responder
@@ -28,7 +22,7 @@ class Admin::BaseController < ApplicationController
 
 
   def subject
-    @subject ||= ::Admin::SubjectModelAdapter.new(current_user)
+    @subject ||= ::Admin::SubjectModelAdapter.new(current_administrator)
   end
 
   def current_resource_class

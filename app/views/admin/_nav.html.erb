@@ -9,7 +9,7 @@
   </li>
   
     <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :icon => "user", :"icon_color" => :white do %>
-        <%= nav_item t('fullstack.admin.logout', :default => "Logout"), admin_sessions_path, :method => :delete %>
+        <%= nav_item t('fullstack.admin.logout', :default => "Logout"), destroy_administrator_session_path, :method => :delete %>
     <% end %>
   <% end %>
   

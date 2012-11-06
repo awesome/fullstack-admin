@@ -1,4 +1,8 @@
-<%= form_tag admin_sessions_path, :method => :post, :class => "login-box" do %>
+<% if resource.errors.any? %>
+<%= resource.errors.inspect %>
+<% end %>
+
+<%= form_for( resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "login-box"} ) do |f| %>
   <div class="login-box-header">
     Login
   </div>
@@ -18,12 +22,12 @@
 
     <div class="input-prepend">
     	<span class="add-on"><i class="icon-user"></i></span>
-      <%= text_field_tag :username, nil, :placeholder => I18n.t("username", :scope => "helpers.label", :default => "Username") %>            
+      <%= f.text_field :username, :placeholder => I18n.t("username", :scope => "helpers.label", :default => "Username") %>            
     </div>
 
     <div class="input-prepend">
     	<span class="add-on"><i class="icon-lock"></i></span>
-      <%= password_field_tag :password, nil, :placeholder => I18n.t("password", :scope => "helpers.label", :default => "Password") %>            
+      <%= f.password_field :password, :placeholder => I18n.t("password", :scope => "helpers.label", :default => "Password") %>            
     </div>
   </div>
 

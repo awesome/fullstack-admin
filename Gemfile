@@ -16,7 +16,6 @@ gem "plupload-rails"
 gem "has-attached", '~> 0.2.4'
 
 gem 'bootstrap-datepicker-rails'
-gem 'sorcery'
 
 group :development do
   gem "jeweler"

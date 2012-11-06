@@ -33,19 +33,17 @@ eos
       
 
       def users
-        generate "sorcery:install remember_me activity_logging brute_force_protection --model Superuser"
+        generate "migration:from administrator"
         generate "migration:from user"
         append_to_file "db/seeds.rb" do
 <<-eos
 
 if Rails.env.development?
-  user = Superuser.new( :email => "admin@example.com",
-                    :password => "password" )
-                  
-  user.skip_confirmation! if user.respond_to?(:skip_confirmation!)             
-  user.save!
-  user.confirm! if user.respond_to?(:confirm)
-  user.has_role!(:administrator) if user.respond_to?(:has_role!)
+  user = Administrator.create!( 
+                    :username => "admin", 
+                    :email => "admin@example.com",
+                    :password => "password" 
+                    )
 end
   
 eos

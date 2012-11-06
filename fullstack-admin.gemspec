@@ -969,6 +969,7 @@ Gem::Specification.new do |s|
     "app/inputs/taglist_input.rb",
     "app/inputs/tags_input.rb",
     "app/inputs/text_input.rb",
+    "app/models/administrator.rb",
     "app/models/authenticatable.rb",
     "app/models/ckeditor/asset.rb",
     "app/models/ckeditor/attachment_file.rb",

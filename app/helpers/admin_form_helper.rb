@@ -180,6 +180,21 @@ module AdminFormHelper
       end
     end
     
+    def box(title, options = {})
+      options[:orientation] ||= "form-horizontal"
+    
+        @target.template.content_tag(:div, :class => ("box " << options[:orientation])) do
+          buff = ""
+          buff << @target.template.content_tag(:div, title, :class => "box-header") 
+          buff << @target.template.content_tag(:div, :class => "box-content") do
+            yield
+          end
+          buff.html_safe
+        end
+    
+    end
+
+    
     def sort_association(association, options = {})
        assoc_str = association.to_s
        @target.template.render :partial => "sort", :locals => { 

@@ -17,8 +17,8 @@ class Admin::ScaffoldController < Admin::BaseController
   def create
       set_object current_resource_class.new(params[:"#{resource_name}"])
       
-      if current_resource.respond_to?(:author)
-        current_resource.author ||= current_user
+      if current_resource.respond_to?("administrator=")
+        current_resource.administrator ||= current_administrator
       end
       
       current_resource.save

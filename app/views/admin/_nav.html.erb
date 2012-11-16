@@ -5,11 +5,14 @@
   </li>
   
   <%= nav_item t('fullstack.admin.homepage', :default => "Homepage"), "/", :icon => "globe", :"icon_color" => :white %>
+  <%= yield :navbar %>
+  
   <li class="divider-vertical">
   </li>
   
     <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :icon => "user", :"icon_color" => :white do %>
         <%= nav_item t('fullstack.admin.logout', :default => "Logout"), destroy_administrator_session_path, :method => :delete %>
+        <%= yield :user_dropdown %>
     <% end %>
   <% end %>
   
@@ -43,8 +46,11 @@
 				</div>
 			</div>
       <% end %>
+  	  <%= yield :sidebar_accordion %>
+      
 		</div>
-	</div>
+	  <%= yield :sidebar %>
+  </div>
 </div>
 
 <% end %>

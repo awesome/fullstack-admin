@@ -6,7 +6,7 @@ class Admin::Responder < ActionController::Responder
      default_location = if delete?
        {:action => :index}
      elsif (follow.to_sym == :show)
-       [:dealers, resource]
+       [:admin, resource]
      else
         [follow, :admin, resource]
      end

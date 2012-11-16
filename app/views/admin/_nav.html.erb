@@ -5,14 +5,24 @@
   </li>
   
   <%= nav_item t('fullstack.admin.homepage', :default => "Homepage"), "/", :icon => "globe", :"icon_color" => :white %>
-  <%= yield :navbar %>
+  <% begin %>
+  <%= render :partial => "admin/nav/navbar" %>
+  <% rescue ActionView::MissingTemplate %>
+  <% end %>
+
   
   <li class="divider-vertical">
   </li>
   
-    <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :icon => "user", :"icon_color" => :white do %>
+    <%= dropdown_nav_item t('fullstack.admin.account', :default => "Account"), :class => "pull-right", :icon => "user", :"icon_color" => :white do %>
+    <% begin %>
+    <%= render :partial => "admin/nav/user_dropdown" %>
+    <% rescue ActionView::MissingTemplate %>
+    <% end %>
+
         <%= nav_item t('fullstack.admin.logout', :default => "Logout"), destroy_administrator_session_path, :method => :delete %>
-        <%= yield :user_dropdown %>
+
+
     <% end %>
   <% end %>
   
@@ -46,10 +56,15 @@
 				</div>
 			</div>
       <% end %>
-  	  <%= yield :sidebar_accordion %>
-      
+      <% begin %>
+      <%= render :partial => "admin/nav/sidebar_accordion" %>
+      <% rescue ActionView::MissingTemplate %>
+      <% end %>
 		</div>
-	  <%= yield :sidebar %>
+    <% begin %>
+    <%= render :partial => "admin/nav/sidebar" %>
+    <% rescue ActionView::MissingTemplate %>
+    <% end %>
   </div>
 </div>
 

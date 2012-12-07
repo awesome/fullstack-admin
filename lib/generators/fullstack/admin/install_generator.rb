@@ -56,6 +56,7 @@ eos
       def append_routes
         src = <<-eos
 
+  devise_for :administrators, :controllers => { :sessions => "admin/sessions" }  
   namespace :admin do
     root :to => "dashboard#show"
   end

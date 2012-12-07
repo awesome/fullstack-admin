@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
+    ".project",
     "Gemfile",
     "Gemfile.lock",
     "README.md",

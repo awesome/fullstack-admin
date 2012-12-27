@@ -4,21 +4,21 @@
 
 .thumbnail {
   position: relative;
+  background: #FCFCFC;
 }
 
 .thumbnail .thumbnail-toolbar {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
+  bottom: 6px;
+  left: 50%;
   display: none;
-
+  margin-left: -65px;
 }
 
 .thumbnail:hover .thumbnail-toolbar {
   height: auto;
   display: block;
 }
-
 
 .thumbnail img[data-zoom-url] {
   cursor: -moz-zoom-in;

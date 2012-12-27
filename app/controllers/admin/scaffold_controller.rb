@@ -1,6 +1,7 @@
 class Admin::ScaffoldController < Admin::BaseController
   respond_to :html, :js
   before_filter :prepend_resource_views_prefix
+  before_filter :fetch_object
     
   def index
     @search = current_resource_class.search(params[:search])
@@ -38,7 +39,6 @@ class Admin::ScaffoldController < Admin::BaseController
   
   protected
   
-  # overrides checkin default
   def fetch_object
     if params[:id]
       set_object(current_resource_class.find(params[:id]))

@@ -14,13 +14,8 @@ module Fullstack
           Ckeditor.setup do |config|
             require "ckeditor/orm/active_record"
           end
-
-          if Object.const_defined?("UserSubject")
-
-            Ckeditor::ApplicationController.class_eval do
-              authorize(:scope => :admin)
-            end
-
+          Ckeditor::ApplicationController.class_eval do
+            before_filter :authenticate_administrator!
           end
         end
                 

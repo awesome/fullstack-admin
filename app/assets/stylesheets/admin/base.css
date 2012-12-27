@@ -370,3 +370,17 @@ cursor: pointer;
 .filter-inputs {
   margin: 0;
 }
+
+/* ================== */
+/* = Rotation icons = */
+/* ================== */
+
+.icon-rotate-left {
+  background: url('/img/rotate-left.png');
+  width: 12px;
+}
+
+.icon-rotate-right {
+  background: url('/img/rotate-right.png');  
+  width: 12px;
+}

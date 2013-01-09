@@ -1,7 +1,7 @@
 class DaterangeInput < FormtasticBootstrap::Inputs::StringInput
 
   def to_html
-    generic_input_wrapping do
+    bootstrap_wrapping do
       [ builder.text_field(gt_input_name, input_html_options(gt_input_name)),
         template.content_tag(:span, "-", :class => "date-range-input-separator"),
         builder.text_field(lt_input_name, input_html_options(lt_input_name)),
@@ -26,5 +26,5 @@ class DaterangeInput < FormtasticBootstrap::Inputs::StringInput
       :readonly => 'readonly',
       :value => current_value.respond_to?(:strftime) ? current_value.strftime("%Y-%m-%d") : "" }
   end
+  
 end
-

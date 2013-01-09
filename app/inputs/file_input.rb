@@ -1,6 +1,6 @@
 class FileInput < FormtasticBootstrap::Inputs::FileInput
   def to_html
-    generic_input_wrapping do
+    bootstrap_wrapping do
       attachment = object.send(method)
       
       info_popup = "" 

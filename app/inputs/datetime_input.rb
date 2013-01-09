@@ -6,7 +6,7 @@ class DatetimeInput
   include FormtasticBootstrap::Inputs::Base::Hints
   
   def to_html
-    generic_input_wrapping do      
+    bootstrap_wrapping do      
        builder.datetime_select(method, {}, {:class => "datetime-selector"})
     end
   end

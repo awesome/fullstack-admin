@@ -8,9 +8,9 @@ gem 'rails', "~> 3.2"
 gem "fullstack", '~> 0.1.26'
 gem "bootstrap-helpers", '~> 0.1.7'
 gem "chosen-rails"
-gem "ckeditor", :git => "git://github.com/paranoida/ckeditor.git"
+gem "ckeditor"
 gem "facebox-rails"
-gem "formtastic-bootstrap", :git => "git://github.com/kristianmandrup/formtastic-bootstrap.git"
+gem "formtastic-bootstrap"
 gem "meta_search"
 gem "plupload-rails"
 gem "has-attached", '~> 0.2.4'

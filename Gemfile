@@ -6,7 +6,7 @@ source "http://rubygems.org"
 
 gem 'rails', "~> 3.2"
 gem "fullstack", '~> 0.1.26'
-gem "bootstrap-helpers", '~> 0.1.7'
+gem "bootstrap-helpers", '~> 0.1.9'
 gem "chosen-rails"
 gem "ckeditor"
 gem "facebox-rails"

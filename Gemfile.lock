@@ -41,7 +41,7 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-datepicker-rails (0.6.35)
       railties (>= 3.0)
-    bootstrap-helpers (0.1.8)
+    bootstrap-helpers (0.1.9)
       rails
     builder (3.0.4)
     checkin (0.5.1)
@@ -243,7 +243,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
-  bootstrap-helpers (~> 0.1.7)
+  bootstrap-helpers (~> 0.1.9)
   chosen-rails
   ckeditor
   facebox-rails

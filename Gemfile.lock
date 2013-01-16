@@ -111,7 +111,7 @@ GEM
       resource-presentation-helpers
       squeel
     git (1.2.5)
-    has-attached (0.2.4)
+    has-attached (0.2.5)
       aws-sdk
       flash_cookie_session
       paperclip
@@ -120,7 +120,7 @@ GEM
       rails
     hike (1.2.1)
     htmlentities (4.3.1)
-    httparty (0.9.0)
+    httparty (0.10.0)
       multi_json (~> 1.0)
       multi_xml
     i18n (0.6.1)
@@ -156,7 +156,7 @@ GEM
       rack-mobile-detect
       rails
     multi_json (1.5.0)
-    multi_xml (0.5.1)
+    multi_xml (0.5.2)
     net-ssh (2.6.2)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
@@ -249,7 +249,7 @@ DEPENDENCIES
   facebox-rails
   formtastic-bootstrap
   fullstack (~> 0.1.26)
-  has-attached (~> 0.2.4)
+  has-attached (~> 0.2.5)
   jeweler
   meta_search
   plupload-rails

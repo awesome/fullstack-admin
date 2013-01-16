@@ -13,7 +13,7 @@ gem "facebox-rails"
 gem "formtastic-bootstrap"
 gem "meta_search"
 gem "plupload-rails"
-gem "has-attached", '~> 0.2.4'
+gem "has-attached", '~> 0.2.5'
 
 gem 'bootstrap-datepicker-rails'
 

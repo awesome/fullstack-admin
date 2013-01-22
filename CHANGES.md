@@ -1,6 +1,12 @@
 # Fullstack Admin Change Log
 
-## 0.2.14
+## 0.2.21
+
+JQuery 1.9 and compatibility issues with plugins solved using jquery-migrate
+- Added jquery-migrate
+- Updates fullstack-ckeditor to use attachments an pictures again
+
+## 0.2.20
 
 Mainly a refactor of js/css to clean up the unessential.
 

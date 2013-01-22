@@ -1,0 +1,363 @@
+@media all and (min-width:980px) {
+ body {
+   position: relative;
+   padding-top: 68px;
+ }
+}
+
+input {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+width: 100%;
+height: auto !important;
+}
+
+/* ========= */
+/* = Icons = */
+/* ========= */
+
+.icon-white, .nav-tabs > .active > a > [class^="icon-"], .nav-tabs > .active > a > [class*=" icon-"], .nav-pills > .active > a > [class^="icon-"], .nav-pills > .active > a > [class*=" icon-"], .nav-list > .active > a > [class^="icon-"], .nav-list > .active > a > [class*=" icon-"], .navbar-inverse .nav > .active > a > [class^="icon-"], .navbar-inverse .nav > .active > a > [class*=" icon-"], .dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class*=" icon-"], .dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"] {
+background-image: url("/img/glyphicons-halflings-white.png");
+}
+
+/* ========== */
+/* = Navbar = */
+/* ========== */
+
+.navbar .nav li.dropdown > .dropdown-toggle .caret {
+  border-top-color: white;
+  border-bottom-color: white;
+}
+
+.navbar-inner {
+     background: #3993ba;
+     background: -moz-linear-gradient(top, #3993ba 0%, #067ead 100%);
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3993ba), color-stop(100%,#067ead));
+     background: -webkit-linear-gradient(top, #3993ba 0%,#067ead 100%);
+     background: -o-linear-gradient(top, #3993ba 0%,#067ead 100%);
+     background: -ms-linear-gradient(top, #3993ba 0%,#067ead 100%);
+     background: linear-gradient(top, #3993ba 0%,#067ead 100%);
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3993ba', endColorstr='#067ead',GradientType=0 );
+     -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+     box-shadow: none;
+
+ }
+
+ .navbar .nav > li > a {
+     color: #c1dce7;
+ }
+
+ .navbar .nav > li:hover > a {
+     color:#fff;
+ }
+
+ .navbar .nav .active > a, .navbar .nav .active > a:hover, .navbar .nav li.dropdown.open > .dropdown-toggle {
+     background: #206484;
+     color: #fff;
+ }
+
+ .navbar .divider-vertical {
+     background-color:#2078A1;
+     border-color:#3497C2;
+ }
+ 
+ .navbar .divider-vertical {
+ border-left-color: #2078A1;
+ border-right-color: #3497C2;
+ }
+ 
+ .dropdown-menu li > a:hover, .dropdown-menu .active > a,
+ .dropdown-menu .active > a:hover,
+ .nav-list > .active > a, .nav-list > .active > a:hover {
+     background: #48a6d2 !important;
+ }
+
+.table thead th {background-color:#ebf2f6 !important}
+.dataTables_wrapper th.sorting_asc,.dataTables_wrapper th.sorting_desc {background-color:#d4e3eb !important}
+
+
+#left-aside .nav {
+  padding-bottom: 180px;
+}
+
+.navbar .nav > li > a {
+padding-top: 10px;
+}
+.navbar .nav > li > a {
+text-shadow: none;
+padding: 9px 10px 11px;
+}
+.navbar .nav > li > a {
+color: #C1DCE7;
+}
+
+.navbar .brand {
+  width: 200px;
+  font: 100 16px/16px 'PT Sans', sans-serif;
+  text-decoration: none;
+  color: #c1dce7;
+  text-shadow: none;
+  padding: 10px 20px 0;
+}
+
+.navbar .brand:hover {
+  color: #fff;
+}
+
+.sidenav > li:first-child {
+-webkit-border-radius: 6px 6px 0 0;
+-moz-border-radius: 6px 6px 0 0;
+border-radius: 6px 6px 0 0;
+}
+
+.sidenav > li {
+display: block;
+margin: 0 0 -1px;
+padding: 8px 14px;
+border: 1px solid #E5E5E5;
+margin-left: -15px;
+margin-right: -15px;
+}
+
+.thumbnails > li {
+  float: left;
+  margin-left: 0 !important;
+  margin-right: 16px;
+}
+
+.chzn-container-multi .chzn-choices .search-choice {
+  display: block;
+  width: 96%;
+  line-height: 20px !important;
+}
+
+.chzn-container-active .chzn-choices {
+  padding-top: 4px;
+}
+
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close {
+  background: url(/assets/chosen-sprite.png) right top no-repeat !important;
+  margin-top: 3px;
+}
+
+
+.chzn-container-multi .chzn-choices .search-field {
+  background: url(/assets/iconic/gray/magnifying_glass_12x12.png) no-repeat left center;
+  margin-left: 7px !important;
+  padding-left: 12px !important;
+}
+
+/* ======= */
+/* = Box = */
+/* ======= */
+
+.box {
+  -webkit-box-shadow: 0px 1px 2px 0px #EFEFEF;
+  -moz-box-shadow: 0px 1px 2px 0px #EFEFEF;
+  box-shadow: 0px 1px 2px 0px #EFEFEF;
+  margin-bottom: 20px;
+}
+
+.box-header, .box-content, .box-footer {
+  padding: 20px;
+}
+
+.box-header {
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid #DDD;
+  padding: 0 10px;
+  background: #FBFBFB;
+  background: -moz-linear-gradient(top, #FBFBFB 0%, #F1F1F1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FBFBFB), color-stop(100%,#F1F1F1));
+  background: -webkit-linear-gradient(top, #FBFBFB 0%,#F1F1F1 100%);
+  background: -o-linear-gradient(top, #FBFBFB 0%,#F1F1F1 100%);
+  background: -ms-linear-gradient(top, #FBFBFB 0%,#F1F1F1 100%);
+  background: linear-gradient(top, #FBFBFB 0%,#F1F1F1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#f1f1f1',GradientType=0 );
+  font-weight: 700;
+  color: #666;
+  font-size: 11px;
+}
+
+
+.box-content {
+  padding: 10px;
+  border: 1px solid #DDD;
+  border-top: none;  
+}
+
+.box-content:last-child {
+margin-bottom: 0;
+padding-bottom: 0;
+}
+
+.box-footer {
+  border: 1px solid #DDD;
+  padding: 8px 10px;
+  background: #F1F1F1;
+  border-top: none;
+}
+
+.box-footer.align-right {
+  text-align: right;
+}
+
+fieldset.box-content {
+  padding-top: 20px;
+}
+
+/* ========== */
+/* = Layout = */
+/* ========== */
+
+a, button, input {
+outline: none !important;
+}
+
+a {
+color: #08C;
+text-decoration: none;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.main {
+  background: white;
+  border-left: 1px solid transparent;
+  margin-left: 240px;
+}
+
+
+/* =============== */
+/* = Page Header = */
+/* =============== */
+
+.resource_updated_at {
+font: italic 12px/32px Arial, Helvetica, sans-serif;
+color: #888;
+}
+
+.page-header h1, h1.page-header{
+  line-height: 34px;
+  font-size: 18px;
+  margin-top: 0;
+}
+.page-header h1 {
+  margin-bottom: 0;
+}
+
+#center > .page-header {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.index-actions {
+  float:right;
+}
+
+
+/* =========== */
+/* = Sidebar = */
+/* =========== */
+
+.sidebar {
+position: fixed;
+top: 40px;
+left: 0;
+margin-left: 0;
+padding-top: 20px;
+width: 240px;
+background: #f1f1f1;
+border-right: 1px solid #ccc;
+height: 100%;
+font: 13px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.sidebar .accordion {
+border-top: 1px solid #CCC;
+margin-bottom: 20px;
+}
+
+.sidebar .accordion-heading a:hover {
+background-color: #CFCFCF;
+}
+
+.sidebar .accordion-heading {
+text-shadow: 1px 1px 0 #EFEFEF;
+background: #E0E0E0;
+-webkit-box-shadow: inset 0px 1px 0px 0px #ECECEC;
+box-shadow: inset 0px 1px 0px 0px #ECECEC;
+}
+
+.sidebar .accordion-inner {
+border-top: 1px solid #CCC;
+background: #FAFAFA;
+}
+
+.sidebar .accordion-group .accordion-heading a {
+  color: #222;
+}
+
+.sidebar .accordion-group .active a {
+color: white;
+}
+
+.nav-list > li > a, .dropdown-menu li a {
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+border-radius: 4px;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-list > .active > a, .nav-list > .active > a:hover {
+background: #48A6D2 !important;
+}
+
+.nav > li > a:hover {
+text-decoration: none;
+background-color: #EEE;
+}
+
+.sidebar .accordion-group a {
+color: #222;
+text-decoration: none!important;
+}
+
+.sidebar .accordion-group {
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+margin-bottom: 0;
+border-color: #CCC;
+border-style: solid;
+border-width: 0 0 1px;
+}
+
+.accordion-heading .accordion-toggle {
+display: block;
+padding: 7px 15px;
+}
+
+.accordion-toggle {
+-webkit-transition: background-color 0.2s ease-in-out;
+-moz-transition: background-color 0.2s ease-in-out;
+-o-transition: background-color 0.2s ease-in-out;
+transition: background-color 0.2s ease-in-out;
+}
+.accordion-toggle {
+cursor: pointer;
+}
+
+/* ================ */
+/* = Filter Input = */
+/* ================ */
+
+.filter-inputs {
+  margin: 0;
+}

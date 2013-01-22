@@ -1,7 +1,0 @@
-/*
-*= require bootstrap.min
-*= require support/bootstrap-workarounds
-*/
-[class^="icon-"], [class*=" icon-"] {
-  background-image: url("/img/glyphicons-halflings.png");
-}

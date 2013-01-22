@@ -135,9 +135,6 @@ module AdminFormHelper
            
            if field && field.options[:markup]
              opts[:as] = :markup
-           
-           elsif field && field.options[:simple_markup]
-             opts[:as] = :simple_markup
 
            elsif field && field.options[:in]
              opts[:as] = :select

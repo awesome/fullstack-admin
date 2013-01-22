@@ -1,0 +1,52 @@
+/*
+*= require ./bootstrap.min
+*/
+
+.controls .alert {
+   margin-top: 18px;
+}
+
+.alert-heading {
+  margin-bottom: 18px;
+}
+
+.badge.badge-mini {
+	padding: 0 5px;
+	font-size: 9px;
+	display: inline-block;
+	line-height: 18px;
+}
+
+.modal.modal-wide {
+  width: 800px;
+  margin: 0 0 0 -420px;
+  top: 20px;
+}
+
+.modal .filter input[type='text'] {
+  width: 300px;
+}
+
+.modal .filter .search_by {
+  float:right;
+}
+
+.btn.hide {
+  display:none;
+}
+
+.tab-content {
+overflow: visible;
+}
+
+.tabs-left .nav-list.nav-tabs {
+  padding-right: 0;
+}
+
+.popover {
+  z-index: 18000;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  background-image: url("/img/glyphicons-halflings.png");
+}

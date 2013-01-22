@@ -1,11 +1,6 @@
-Rails.application.routes.draw do
- 
-  mount Ckeditor::Engine => '/ckeditor'
-
-  
+Rails.application.routes.draw do  
   namespace :admin do
- 
- 
+
     resources :positionables, :only => [:index] do
       post :sort, :on => :collection
     end
@@ -21,5 +16,4 @@ Rails.application.routes.draw do
     end
     
   end
-  
 end

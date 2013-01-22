@@ -10,6 +10,10 @@ module Fullstack
       class_option :title, :default => "title"
       class_option :slogan, :default => "slogan"
     
+      def install_ckeditor
+        generate "fullstack:ckeditor:install"
+      end
+    
       def install_fullstack
         if options[:fullstack]
           generate "fullstack:install  --host='#{host}' --user='#{user}'  --title='#{title}' --slogan='#{slogan}'"

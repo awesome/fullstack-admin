@@ -20,23 +20,21 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#require "bootstrap-wysihtml5-rails"
 require "bootstrap-helpers"
 require "chosen-rails"
-require "ckeditor" 
+
 require "facebox-rails" 
 require "formtastic"
 require "formtastic-bootstrap"
 require "kaminari"
 require "meta_search"
 require "plupload-rails"
-require "fullstack"
 require "bootstrap-datepicker-rails"
-require "fullstack"
 
+require "fullstack"
+require "fullstack-ckeditor"
 require 'fullstack/admin/engine'
 require 'fullstack/admin/resources'
-
 
 module Fullstack
   module Admin

@@ -233,3 +233,7 @@ list-style-type: none;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+.boolean .control-label {
+  display: none;
+}

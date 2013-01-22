@@ -41,7 +41,7 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-datepicker-rails (0.6.35)
       railties (>= 3.0)
-    bootstrap-helpers (0.1.8)
+    bootstrap-helpers (0.1.9)
       rails
     builder (3.0.4)
     checkin (0.5.1)
@@ -63,7 +63,7 @@ GEM
     coffeebeans (1.0.1)
       actionpack (>= 3.0.0)
       coffee-script
-    devise (2.2.0)
+    devise (2.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
@@ -83,7 +83,7 @@ GEM
     formtastic-bootstrap (2.0.0)
       formtastic (~> 2.2)
       formtastic-bootstrap
-    fullstack (0.1.26)
+    fullstack (0.1.27)
       active_record_schema
       auto_strip_attributes
       checkin
@@ -97,7 +97,7 @@ GEM
       jquery-rails
       kaminari (= 0.13.0)
       kaminari-i18n
-      meta-tags-helpers
+      meta-tags-helpers (~> 0.1.4)
       mobile-fu (~> 1.1.0)
       nokogiri
       rails
@@ -111,7 +111,7 @@ GEM
       resource-presentation-helpers
       squeel
     git (1.2.5)
-    has-attached (0.2.4)
+    has-attached (0.2.5)
       aws-sdk
       flash_cookie_session
       paperclip
@@ -120,7 +120,7 @@ GEM
       rails
     hike (1.2.1)
     htmlentities (4.3.1)
-    httparty (0.9.0)
+    httparty (0.10.0)
       multi_json (~> 1.0)
       multi_xml
     i18n (0.6.1)
@@ -144,7 +144,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta-tags-helpers (0.1.2)
+    meta-tags-helpers (0.1.4)
       rails
     meta_search (1.1.3)
       actionpack (~> 3.1)
@@ -156,8 +156,8 @@ GEM
       rack-mobile-detect
       rails
     multi_json (1.5.0)
-    multi_xml (0.5.1)
-    net-ssh (2.6.2)
+    multi_xml (0.5.2)
+    net-ssh (2.6.3)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
     paperclip (3.4.0)
@@ -243,13 +243,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
-  bootstrap-helpers (~> 0.1.7)
+  bootstrap-helpers (~> 0.1.9)
   chosen-rails
   ckeditor
   facebox-rails
   formtastic-bootstrap
-  fullstack (~> 0.1.26)
-  has-attached (~> 0.2.4)
+  fullstack (~> 0.1.27)
+  has-attached (~> 0.2.5)
   jeweler
   meta_search
   plupload-rails

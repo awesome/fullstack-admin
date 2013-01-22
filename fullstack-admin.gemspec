@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.2.13"
+  s.version = "0.2.19"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
-  s.date = "2013-01-09"
+  s.date = "2013-01-18"
   s.description = "Administration interface framework for fullstack"
   s.email = "maurizio.cas@gmail.com"
   s.extra_rdoc_files = [
@@ -1083,42 +1083,42 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, ["~> 3.2"])
-      s.add_runtime_dependency(%q<fullstack>, ["~> 0.1.26"])
-      s.add_runtime_dependency(%q<bootstrap-helpers>, ["~> 0.1.7"])
+      s.add_runtime_dependency(%q<fullstack>, ["~> 0.1.27"])
+      s.add_runtime_dependency(%q<bootstrap-helpers>, ["~> 0.1.9"])
       s.add_runtime_dependency(%q<chosen-rails>, [">= 0"])
       s.add_runtime_dependency(%q<ckeditor>, [">= 0"])
       s.add_runtime_dependency(%q<facebox-rails>, [">= 0"])
       s.add_runtime_dependency(%q<formtastic-bootstrap>, [">= 0"])
       s.add_runtime_dependency(%q<meta_search>, [">= 0"])
       s.add_runtime_dependency(%q<plupload-rails>, [">= 0"])
-      s.add_runtime_dependency(%q<has-attached>, ["~> 0.2.4"])
+      s.add_runtime_dependency(%q<has-attached>, ["~> 0.2.5"])
       s.add_runtime_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["~> 3.2"])
-      s.add_dependency(%q<fullstack>, ["~> 0.1.26"])
-      s.add_dependency(%q<bootstrap-helpers>, ["~> 0.1.7"])
+      s.add_dependency(%q<fullstack>, ["~> 0.1.27"])
+      s.add_dependency(%q<bootstrap-helpers>, ["~> 0.1.9"])
       s.add_dependency(%q<chosen-rails>, [">= 0"])
       s.add_dependency(%q<ckeditor>, [">= 0"])
       s.add_dependency(%q<facebox-rails>, [">= 0"])
       s.add_dependency(%q<formtastic-bootstrap>, [">= 0"])
       s.add_dependency(%q<meta_search>, [">= 0"])
       s.add_dependency(%q<plupload-rails>, [">= 0"])
-      s.add_dependency(%q<has-attached>, ["~> 0.2.4"])
+      s.add_dependency(%q<has-attached>, ["~> 0.2.5"])
       s.add_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
     s.add_dependency(%q<rails>, ["~> 3.2"])
-    s.add_dependency(%q<fullstack>, ["~> 0.1.26"])
-    s.add_dependency(%q<bootstrap-helpers>, ["~> 0.1.7"])
+    s.add_dependency(%q<fullstack>, ["~> 0.1.27"])
+    s.add_dependency(%q<bootstrap-helpers>, ["~> 0.1.9"])
     s.add_dependency(%q<chosen-rails>, [">= 0"])
     s.add_dependency(%q<ckeditor>, [">= 0"])
     s.add_dependency(%q<facebox-rails>, [">= 0"])
     s.add_dependency(%q<formtastic-bootstrap>, [">= 0"])
     s.add_dependency(%q<meta_search>, [">= 0"])
     s.add_dependency(%q<plupload-rails>, [">= 0"])
-    s.add_dependency(%q<has-attached>, ["~> 0.2.4"])
+    s.add_dependency(%q<has-attached>, ["~> 0.2.5"])
     s.add_dependency(%q<bootstrap-datepicker-rails>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
   end

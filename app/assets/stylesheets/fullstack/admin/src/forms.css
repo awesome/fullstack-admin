@@ -237,3 +237,7 @@ list-style-type: none;
 .boolean .control-label {
   display: none;
 }
+
+.cke, .form-horizontal .cke {
+ width: 100%; 
+}

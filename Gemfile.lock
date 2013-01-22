@@ -49,9 +49,6 @@ GEM
       coffee-rails (>= 3.2)
       railties (>= 3.0)
       sass-rails (>= 3.2)
-    ckeditor (3.7.3)
-      mime-types
-      orm_adapter
     cocaine (0.4.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -110,6 +107,8 @@ GEM
       remotipart
       resource-presentation-helpers
       squeel
+    fullstack-ckeditor (0.1.2)
+      rails
     git (1.2.5)
     has-attached (0.2.5)
       aws-sdk
@@ -245,10 +244,10 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-helpers (~> 0.1.9)
   chosen-rails
-  ckeditor
   facebox-rails
   formtastic-bootstrap
   fullstack (~> 0.1.27)
+  fullstack-ckeditor (~> 0.1.2)
   has-attached (~> 0.2.5)
   jeweler
   meta_search

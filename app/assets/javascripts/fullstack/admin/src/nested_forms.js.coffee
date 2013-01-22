@@ -13,9 +13,7 @@ $(document).ready ->
   autoupdate_labels = (associated_resources) ->
     associated_resources.each ->
       associated_resource = $(@)
-      
       label_input = $(associated_resource.find("input[type='text']")[0])
-      console.log(label_input)
       label_input.change ->
         associated_resource.find(".associated-resource-label").text(label_input.val())
   

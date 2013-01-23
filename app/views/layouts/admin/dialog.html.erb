@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <%= csrf_meta_tags %>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag 'admin/admin' %>
+  <%= yield :stylesheets %>
+</head>
+
+<body class="dialog">
+  <% [:notice, :error, :alert].each do |sym| %>
+  <% if flash[sym] %>
+    <div class="alert alert-<%= sym %>">
+      <%= flash[sym] %>
+      <% flash.discard(sym) %>
+    </div>  
+  <% end %>
+  <% end %>
+  
+  <div class="container">
+    <div class="content">
+      <%= yield %>    
+    </div>
+  </div>
+  
+  <%= javascript_include_tag 'admin/admin' %>
+  <%= yield :javascripts %>  
+</body>
+</html>
+

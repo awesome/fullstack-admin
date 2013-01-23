@@ -8,7 +8,7 @@ gem 'rails', "~> 3.2"
 gem "fullstack", '~> 0.1.27'
 gem "bootstrap-helpers", '~> 0.1.9'
 gem "chosen-rails"
-gem "fullstack-ckeditor", '~> 0.1.2'
+gem "fullstack-ckeditor", '~> 0.1.3'
 gem "facebox-rails"
 gem "formtastic-bootstrap"
 gem "meta_search"

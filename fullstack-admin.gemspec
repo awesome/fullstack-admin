@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.2.20"
+  s.version = "0.2.21"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
-  s.date = "2013-01-22"
+  s.date = "2013-01-23"
   s.description = "Administration interface framework for fullstack"
   s.email = "maurizio.cas@gmail.com"
   s.extra_rdoc_files = [
@@ -45,7 +45,6 @@ Gem::Specification.new do |s|
     "app/assets/javascripts/fullstack/admin.js.coffee",
     "app/assets/javascripts/fullstack/admin/lib/ajax-chosen.js",
     "app/assets/javascripts/fullstack/admin/lib/bootstrap.min.js",
-    "app/assets/javascripts/fullstack/admin/lib/bootstrap_confirm_modal.js.coffee",
     "app/assets/javascripts/fullstack/admin/lib/combobox.js",
     "app/assets/javascripts/fullstack/admin/lib/jquery.noty.js",
     "app/assets/javascripts/fullstack/admin/lib/jquery.tagsinput.js",
@@ -64,6 +63,7 @@ Gem::Specification.new do |s|
     "app/assets/javascripts/fullstack/admin/src/prevent_submit_on_enter.js.coffee",
     "app/assets/javascripts/fullstack/admin/src/sortable.js.coffee",
     "app/assets/javascripts/fullstack/admin/src/uploads.js.coffee",
+    "app/assets/javascripts/jquery-migrate-to-1.9.js",
     "app/assets/stylesheets/fullstack/admin.css",
     "app/assets/stylesheets/fullstack/admin/lib/bootstrap-overrides.css",
     "app/assets/stylesheets/fullstack/admin/lib/bootstrap.min.css",
@@ -186,7 +186,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<fullstack>, ["~> 0.1.27"])
       s.add_runtime_dependency(%q<bootstrap-helpers>, ["~> 0.1.9"])
       s.add_runtime_dependency(%q<chosen-rails>, [">= 0"])
-      s.add_runtime_dependency(%q<fullstack-ckeditor>, ["~> 0.1.2"])
+      s.add_runtime_dependency(%q<fullstack-ckeditor>, ["~> 0.1.3"])
       s.add_runtime_dependency(%q<facebox-rails>, [">= 0"])
       s.add_runtime_dependency(%q<formtastic-bootstrap>, [">= 0"])
       s.add_runtime_dependency(%q<meta_search>, [">= 0"])
@@ -199,7 +199,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<fullstack>, ["~> 0.1.27"])
       s.add_dependency(%q<bootstrap-helpers>, ["~> 0.1.9"])
       s.add_dependency(%q<chosen-rails>, [">= 0"])
-      s.add_dependency(%q<fullstack-ckeditor>, ["~> 0.1.2"])
+      s.add_dependency(%q<fullstack-ckeditor>, ["~> 0.1.3"])
       s.add_dependency(%q<facebox-rails>, [">= 0"])
       s.add_dependency(%q<formtastic-bootstrap>, [">= 0"])
       s.add_dependency(%q<meta_search>, [">= 0"])
@@ -213,7 +213,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<fullstack>, ["~> 0.1.27"])
     s.add_dependency(%q<bootstrap-helpers>, ["~> 0.1.9"])
     s.add_dependency(%q<chosen-rails>, [">= 0"])
-    s.add_dependency(%q<fullstack-ckeditor>, ["~> 0.1.2"])
+    s.add_dependency(%q<fullstack-ckeditor>, ["~> 0.1.3"])
     s.add_dependency(%q<facebox-rails>, [">= 0"])
     s.add_dependency(%q<formtastic-bootstrap>, [">= 0"])
     s.add_dependency(%q<meta_search>, [">= 0"])

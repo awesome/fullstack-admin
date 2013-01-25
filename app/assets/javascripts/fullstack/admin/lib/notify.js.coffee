@@ -1,4 +1,4 @@
-//= require "fullstack/admin/lib/jquery.noty"
+#= require "fullstack/admin/lib/jquery.noty"
 
 $.notify =
   notice: (message) ->

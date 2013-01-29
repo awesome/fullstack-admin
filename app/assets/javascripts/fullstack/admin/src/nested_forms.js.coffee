@@ -26,7 +26,7 @@ $(document).ready ->
     associated_resources_index  = associated_resources.find(".associated-resources-index")
     resource_fields_template    = associated_resources.find(".resource-fields-template")
     new_id = new Date().getTime()
-    template_instance           = $(resource_fields_template.html().replace(/___index___/g, new_id))
+    template_instance           = $( $.parseHTML(resource_fields_template.html().replace(/___index___/g, new_id)) )
     associated_resources_index.append(template_instance)
     autoupdate_labels(associated_resources_index.find('.associated-resource:last'))
     update_positions associated_resources_index

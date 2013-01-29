@@ -1,1 +1,1 @@
-#= require admin/base
+#= require fullstack/admin

@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "fullstack-admin"
-  s.version = "0.2.25"
+  s.version = "0.2.26"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mcasimir"]
@@ -175,7 +175,7 @@ Gem::Specification.new do |s|
     "lib/generators/fullstack/admin/templates/scaffold/views/_form.html.erb.tt",
     "lib/generators/fullstack/admin/templates/scaffold/views/_index.html.erb.tt"
   ]
-  s.homepage = "http://github.com/mcasimir/kaminari-bootstrap"
+  s.homepage = "http://github.com/mcasimir/fullstack-admin"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.25"

@@ -15,7 +15,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "fullstack-admin"
-  gem.homepage = "http://github.com/mcasimir/kaminari-bootstrap"
+  gem.homepage = "http://github.com/mcasimir/fullstack-admin"
   gem.license = "MIT"
   gem.summary = %Q{Administration interface framework for fullstack}
   gem.description = %Q{Administration interface framework for fullstack}
